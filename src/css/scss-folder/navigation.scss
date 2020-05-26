@@ -53,6 +53,7 @@ header {
 		top: 50%;
 		transform: translateY(-50%);
 		width: 32px;
+		cursor: pointer;
 	}
 
 	@keyframes fadeNavClose {
@@ -87,6 +88,7 @@ header {
 	color: red;
 	opacity: 0;
 	animation: fadeNavClose ease 0.5s forwards;
+	cursor: pointer;
 }
 // header.above{
 // 	position: relative;

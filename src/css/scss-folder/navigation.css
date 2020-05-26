@@ -58,6 +58,7 @@ header #burger {
   top: 50%;
   transform: translateY(-50%);
   width: 32px;
+  cursor: pointer;
 }
 
 @keyframes fadeNavClose {
@@ -92,6 +93,7 @@ header nav {
   color: red;
   opacity: 0;
   animation: fadeNavClose ease 0.5s forwards;
+  cursor: pointer;
 }
 
 .list-movil {
