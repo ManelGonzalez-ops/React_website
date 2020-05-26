@@ -1,0 +1,55 @@
+
+
+@import "scss-folder/navigation";
+
+@import "scss-folder/hero";
+
+@import "scss-folder/services/servicess";
+
+@import "scss-folder/studies/studies.scss";
+
+@import "scss-folder/skills/skills.scss";
+
+@import "scss-folder/form/form.scss";
+
+
+.clientWidth {
+	display: inline-block;
+	position: fixed;
+	right: 5%;
+}
+
+
+html{
+	// scroll-snap-type:y proximity;
+	// overflow-y: scroll;
+	overflow-x: hidden;
+	font-family: helvetica neue;
+	background-color: #fff;
+	
+}
+.App {
+	position: relative;
+	overflow-x: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+  }
+  
+
+  .responsive-container{
+	display: block;
+
+
+  }
+
+  @media (min-width: 900px){
+	.responsive-container{
+		display: grid;
+		grid-template-columns: 45% 35%;
+		justify-content: space-around;
+		align-items: flex-end;
+		position: relative;
+	}
+  }
+
+  

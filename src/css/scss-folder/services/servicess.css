@@ -1,0 +1,74 @@
+.container-services {
+  box-sizing: border-box;
+  margin-bottom: 12em;
+}
+
+.container-services .cont-services {
+  padding: 2em;
+}
+
+.container-services .cont-services .cartaSkill {
+  margin: 2em auto;
+  width: 250px;
+  padding: 1em;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), transform 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), box-shadow 0.5s ease-in-out;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-services .cont-services .cartaSkill:hover {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09), 0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09), 0 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+.container-services .cont-services .cartaSkill.visibleC {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.container-services .cont-services .cartaSkill .iconCard {
+  font-size: 2em;
+  color: grey;
+}
+
+.container-services .cont-services .cartaSkill h3 {
+  color: var(--body-color);
+  font-size: 1.5rem;
+  margin: 1em 0;
+}
+
+.container-services .cont-services .cartaSkill p {
+  opacity: 0.8;
+  margin-bottom: 0;
+  line-height: 1.5em;
+}
+
+.hola {
+  color: black;
+}
+
+@media (min-width: 1000px) {
+  .container-services {
+    margin-left: 4.5em;
+    margin-right: 4.5em;
+  }
+  .container-services .cont-services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+  }
+  .container-services .cont-services .cartaSkill {
+    text-align: left;
+    width: 250px;
+    height: auto;
+    padding: 1.7em;
+    background-color: white;
+    top: 0px;
+    margin: 0px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
+  }
+  .container-services .cont-services .cartaSkill .iconCard {
+    font-size: 2em;
+  }
+}

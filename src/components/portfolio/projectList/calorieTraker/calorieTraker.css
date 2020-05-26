@@ -1,0 +1,192 @@
+.kcal-nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    background-color: crimson;
+    height: 10vh;
+    align-items: center;
+
+}
+.path-kcal{
+    cursor: pointer;
+}
+
+.kcal-nav h5{
+    padding: 0;
+    margin: 0;
+    margin-right: 1em;
+    color: white;
+    font-size: 1.5em;
+}
+
+.kcal-container{
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+padding: 1em;
+box-sizing: border-box;
+}
+
+
+.kcal-form-grid{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+    width: 100%;
+    margin-bottom: 1em;
+    row-gap: 0.7em;
+}
+.kcal-form-grid label{
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+.kcal-form-grid input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8em;
+    border: 1px solid black;
+}
+.kcal-total{
+    text-align: center;
+}
+.kcal-list{
+    padding: 0;
+    
+}
+.kcal-list li{
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    background: #f2738d;
+    padding: 1em;
+    border: 1px solid crimson;
+}
+.kcal-list li:last-of-type{
+    border-bottom: 1px solid black;
+}
+#kcal-name,#kcal-amount{
+    padding: 1em;
+    border-radius: 0.2em;
+    outline: 0;
+    border: 1px solid black;
+}
+.kcal-form-group input{
+    border: 1px solid black;
+}
+@media (min-width: 425px){
+    .kcal-container{
+        margin: 0 auto;
+        width: 80%;
+    }
+    .kcal-list{
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+@media (min-width: 700px){
+    .kcal-form-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        column-gap: 1em;
+    }
+}
+
+@media (min-width: 900px){
+    .kcal-container{
+        width: 60%;
+    }
+    .kcal-section{
+        padding: 2em;
+    }
+    .kcal-list{
+        width: 60%;
+    }
+    
+}
+
+.add-kcal{
+    border: 0;
+    outline: 0;
+    border-radius: 0.2em;
+    color: white;
+    background-color: #0174df;
+    padding: 1em 1.7em;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-sizing: border-box;
+}
+.add-kcal:hover{
+    color: #0174df;
+    font-weight: bold;
+    outline: 2px solid #0174df;
+    -moz-outline-radius: 0.3em;
+    background-color: white;
+}
+
+.button-submit.update-kcal{
+    border: 0;
+    outline: 0;
+    border-radius: 0.2em;
+    color: white;
+    background-color: orange;
+    padding: 1em 1.7em;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-sizing: border-box;
+}
+.button-submit.update-kcal:hover{
+    color: orange;
+    font-weight: bold;
+    outline: 2px solid orange;
+    -moz-outline-radius: 0.3em;
+    background-color: white;
+}
+.button-submit.delete-kcal{
+    border: 0;
+    outline: 0;
+    border-radius: 0.2em;
+    color: white;
+    background-color: red;
+    padding: 1em 1.7em;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-sizing: border-box;
+}
+.button-submit.delete-kcal:hover{
+    color: red;
+    font-weight: bold;
+    outline: 2px solid red;
+    -moz-outline-radius: 0.3em;
+    background-color: white;
+}
+.button-submit.back-kcal{
+    border: 0;
+    outline: 0;
+    border-radius: 0.2em;
+    color: white;
+    background-color: grey;
+    padding: 1em 1.7em;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-sizing: border-box;
+}
+.button-submit.back-kcal:hover{
+    color: grey;
+    font-weight: bold;
+    outline: 2px solid grey;
+    -moz-outline-radius: 0.3em;
+    background-color: white;
+}
+
+.calories-app .button-submit{
+    margin-right: 0.5em;
+    box-sizing: border-box;
+}
+
+.calorie-cont{
+    background: white;
+}
+
+.edit-item{
+    width: 100px;
+}

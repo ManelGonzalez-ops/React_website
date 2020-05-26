@@ -1,0 +1,7 @@
+//   else{
+    //     projectTL.to(element.target,{duration: 0.3, opacity: 0, x: -20, ease: "power3.inOut", stagger:{
+    //       amount: 0.01
+    //     }})
+    //   }
+    //   console.log("kaka")
+    // })

@@ -1,0 +1,241 @@
+.cont-estudios {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 5em;
+}
+
+.cont-estudios h2 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.cont-estudios .linea {
+  position: absolute;
+  width: 0.1em;
+  height: 320px;
+  background-color: black;
+  top: 100px;
+  left: 0em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.cont-estudios .icono-estudio {
+  width: 50px;
+  height: 50px;
+  background: #6200ea;
+  padding: 2px;
+}
+
+.cont-estudios .timelinen {
+  padding-left: 5px;
+}
+
+.cont-estudios .timelinen .timelin-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-left: 25px;
+}
+
+.cont-estudios .timelinen li {
+  list-style: none;
+  background-color: white;
+  margin: 2em;
+  margin-top: 1.25rem;
+  margin-right: 0;
+  position: relative;
+}
+
+.cont-estudios .timelinen li .cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  height: 50%;
+  padding: 0.5em;
+}
+
+.cont-estudios .section-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-estudios .timelinen li .line-title {
+  font-size: 16px;
+  color: grey;
+  margin: 0;
+  padding: 0;
+}
+
+.cont-estudios .timelinen li span {
+  font-size: 12px;
+}
+
+.cont-estudios .timelinen li .line-text {
+  color: white;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.cont-estudios .timelinen li:before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border: 3px solid;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 8px;
+  font-weight: 400;
+  background: white;
+  display: block;
+  left: -2.75rem;
+  top: 25%;
+}
+
+.cont-estudios .timelinen li.first {
+  border: 2px solid #5b28ec;
+  box-sizing: border-box;
+}
+
+.cont-estudios .timelinen li.first .line-text {
+  background-color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.first:before {
+  border-color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.first span {
+  color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.second {
+  border: 2px solid #5b28ec;
+  box-sizing: border-box;
+}
+
+.cont-estudios .timelinen li.second .line-text {
+  background-color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.second:before {
+  border-color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.second span {
+  color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.third {
+  border: 2px solid #5b28ec;
+}
+
+.cont-estudios .timelinen li.third .line-text {
+  background-color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.third:before {
+  border-color: #5b28ec;
+}
+
+.cont-estudios .timelinen li.third span {
+  color: #5b28ec;
+}
+
+@media (max-width: 500px) {
+  .cont-estudios {
+    width: 96%;
+  }
+  .cont-estudios .linea {
+    position: absolute;
+    width: 0.1em;
+    background-color: black;
+    left: 0.6em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .cont-estudios .timelinen {
+    margin: 0;
+    padding-left: 15px;
+  }
+  .cont-estudios .timelinen li {
+    margin: 1.25rem;
+    margin-left: 10px;
+  }
+  .cont-estudios .timelinen li:before {
+    left: -2.9em;
+  }
+  .cont-estudios .timelinen li .line-title {
+    position: absolute;
+    right: 0.5em;
+  }
+}
+
+@media (max-width: 380px) {
+  .puta-palabra {
+    width: 150px;
+  }
+  .cont-estudios {
+    padding: 0;
+    width: 100%;
+  }
+  .cont-estudios .linea {
+    left: 0.75em;
+  }
+  .cont-estudios .timelinen {
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  .cont-estudios .timelinen li:before {
+    left: -3.1em;
+  }
+  .cont-estudios .timelinen li .cabecera-d {
+    margin-bottom: 1.2em;
+  }
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.title-line {
+  height: 2px;
+  width: 10%;
+  background-color: black;
+  margin-right: 2.5%;
+}
+
+.titulo__componente {
+  font-size: 3em;
+}
+
+@media (max-width: 500px) {
+  .title-container {
+    margin-left: 5px;
+  }
+  .title-container .title-line {
+    margin-right: 10px;
+  }
+  .title-container .titulo__componente {
+    position: relative;
+    left: -35px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cont-estudios .section-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .cont-estudios .section-wrapper .timeline-wrapper {
+    width: 50%;
+    margin-right: 7.5em;
+  }
+}

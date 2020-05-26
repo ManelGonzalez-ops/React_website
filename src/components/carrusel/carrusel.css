@@ -1,0 +1,46 @@
+.mi-carrusel {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+align-items: center;
+height: 90vh;
+position: relative;
+}
+
+
+
+.card-container-slider{
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: calc(50vw - calc(231px / 2));
+   
+}
+
+.right-slider {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: grey;
+}
+
+.left-slider {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: grey;
+}
+
+@media (max-width: 1000px){
+  .card-container{
+    margin-left: 40vw;
+   
+  }
+}

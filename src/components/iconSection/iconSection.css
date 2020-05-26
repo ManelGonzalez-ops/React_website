@@ -1,0 +1,72 @@
+.icn-circle {
+    display: none;
+}
+@media (min-width: 1000px) {
+    .icn-circle {
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        background: white;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+            0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    .icn-circle:nth-of-type(2) {
+        height: 150px;
+        width: 150px;
+        top: 40%;
+        right: 5%;
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    .icn-circle:nth-of-type(3) {
+        height: 200px;
+        width: 200px;
+        top: 30%;
+        right: 25%;
+        opacity: 0;
+        transform: scale(0.4) translateZ(0.0001px);
+        
+    }
+
+    .icn-circle:hover {
+        transform: scale(2);
+    }
+
+    .icn-circle.onVisible:nth-of-type(2) {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .icn-circle.onVisible:nth-of-type(3) {
+        transform: scale(1) translateZ(0.0001px);
+        opacity: 1;
+    }
+    .icn-circle:nth-of-type(2) svg {
+        transform: scale(0);
+        opacity: 0;
+        transform-box: fill-box;
+    }
+    .icn-circle:nth-of-type(3) svg {
+        transform: scale(0.5) translateZ(0.0001px);
+        
+        opacity: 0;
+        
+    }
+    .icn-circle.onVisible:nth-of-type(2) svg {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .icn-circle.onVisible:nth-of-type(3) svg {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,190 @@
+.hero{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+    padding: 2em;
+    margin-left: 4em;
+    top: 15vh;
+    margin-top: 6em;
+    margin-bottom: 15em;
+
+.profile-photo{
+
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    right: 10%;
+}    
+
+.titulo-nombre{
+    font-size: 1em;
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+    font-size: 2.4em;
+    mix-blend-mode: difference;
+    color: var(--comp-color);
+    position: relative;
+    z-index: 13;
+    transform: translateX(0px);
+    font-family: helvetica neue extended oblique;
+    opacity: 0;
+}
+    span{
+        display: block;
+    }
+    
+    
+    .kuku{
+        mix-blend-mode: difference;
+    }
+    .wrap-titleH{
+        overflow: hidden;
+    }
+    .titulo-nameB{
+        font-size: 5rem;
+        margin: 0;
+        text-align: left;
+        
+        height: 90px;
+        width: 100%;
+        padding: 0;
+    }
+    .btn-principal{
+        padding: 0.6em 1.5em;
+        margin-top: 6em;
+        text-decoration: none;
+        font-size: 1.15em;
+        box-sizing: border-box;
+        font-weight: bold;
+        color: white;
+        outline: 0;
+        opacity: 0;
+        transform: translateY(50px);
+        background-color: var(--body-color);
+        transition: all 0.5s ease;
+        margin-left: 3px;
+        border: 3px solid var(--body-color);
+        cursor: pointer;
+    }
+    .btn-principal:hover{
+    
+        color: var(--body-color);
+        background-color: white;
+    }
+}
+
+.icono1,.icono2,.icono3,.icono4{
+    position: absolute;
+    top: 330px;
+    left: 250px;
+    display: inline-block;
+    opacity: 0;
+}
+.mask{
+    display: none;
+}
+
+@media (max-width: 345px){
+    .hero{
+        
+        margin-left: 0 !important;
+        padding: 0.5em;
+        font-size: 0.7em;
+        .wrap-titleH{
+            overflow: hidden;
+            margin-bottom: 13em;
+        }
+        .profile-photo{
+            width: 100px;
+            height: 100px;      
+        }
+       
+        .titulo-nameB{
+            font-size: 4em;
+            line-height: 0.9em;
+        }
+        .titulo-nombre{
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .hero{
+       margin-left: 1em;
+       padding: 1em;
+        .wrap-titleH{
+            margin-bottom: 9em;
+        }
+        .profile-photo{
+            width: 100px;
+            height: 100px;      
+        }
+        .titulo-nameB{
+            font-size: 5em;
+            line-height: 0.9em;
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .hero{
+        .wrap-titleH{
+            margin-bottom: 10.5em;
+        }
+    }
+}
+.firstMask{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 12;
+    
+}
+.secondMask{
+    position: absolute;
+    
+    height: 100vh;
+    width: 100vw;
+   
+    background-color: blue;
+    z-index: 11;
+}
+// .firstMask{
+//     position: absolute;
+//     width: 100%;
+//     height: 100vh;
+//     background-color: lightblue;
+//     z-index: 11;
+// }
+// .secondMask{
+//     position: absolute;
+//     width: 100%;
+//     height: 100vh;
+//     background-color: white;
+//     z-index: 12;
+// }
+
+@media(max-width: 1000px){
+    .hero{
+display: block;
+margin-left: 2em;
+        .profile-photo{
+            position: static;
+            float: right;
+        shape-outside: circle();}
+    }
+    .wrap-titleH{
+        margin-bottom: 9em;
+    }
+    .titulo-nameB{
+        font-size: 5em;
+        line-height: 0.9em;
+    }
+}

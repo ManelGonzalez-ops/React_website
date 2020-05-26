@@ -1,0 +1,232 @@
+@mixin icnC {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.skill-container {
+    * {
+        box-sizing: border-box;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 11em;
+    .skill-unit {
+        transform: translateY(50px);
+        margin: 1em;
+        width: 40%;
+        padding: 1em;
+        font-size: 0.7rem;
+        transition: all 0.5s ease;
+
+        p,
+        h1 {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.7s ease;
+        }
+
+        svg {
+            width: 100%;
+            max-height: 200px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+        }
+
+        &.onView {
+            svg,
+            .html {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            p,
+            h1 {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    }
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+   
+    
+    .title-line {
+        height: 2px;
+        width: 10%;
+        background-color: black;
+        margin-right: 2em;
+        opacity: 0;
+    }
+
+    .titulo__componente {
+        font-size: 3em;
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    &.visibleB {
+        
+        .title-line {
+            animation: lineGrow 0.6s ease 0.2s forwards;
+            transform-origin: 0 0;
+            transform: scaleX(0.4);
+        }
+
+        .titulo__componente{
+           
+            animation: titleFadeIn 0.6s ease 0.4s forwards;
+        }
+    }
+}
+.colocador{
+    transform: translateY(150px);
+}
+
+@media (max-width: 1000px){
+    .title-container{
+        transform: translateY(-50px);
+    }
+}
+
+@media (max-width: 480px){
+    .title-container{
+        .title-line{
+            margin-right: 0.3em;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .skill-container {
+        margin: 1em;
+        justify-content: space-around;
+        padding: 1em;
+
+        .skill-unit {
+            width: 150px;
+            margin: 1.5em;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@keyframes lineGrow {
+    from {
+        transform: scaleX(0.4);
+        opacity: 0;
+    }
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@keyframes titleFadeIn {
+    from{
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(50px);
+        opacity: 1;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .skill-container {
+        .skill-unit {
+            width: 230px;
+            font-size: 1rem;
+            svg {
+                
+                &.htmlL {
+                    transform: translateX(20%) translateY(50px);
+                    @include icnC;
+                }
+            }
+            &.onView {
+                svg {
+                    &.htmlL {
+                        transform: translateX(20%) translateY(0px);
+                        opacity: 1;
+                    }
+                   
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1050px) {
+    .skill-container {
+        padding: 0;
+        margin: 5em;
+        .skill-unit {
+            width: 240px;
+            svg {
+                &.nodeN {
+                    transform: translateX(15%) translateY(50px);
+                    @include icnC;
+                }
+                &.gitG {
+                    height: 140px;
+                    transform: translateX(10%) translateY(50px);
+                    @include icnC;
+                }
+                &.javascriptJ {
+                    transform: translateX(10%) translateY(50px);
+                    @include icnC;
+                }
+                &.pythonP {
+                    transform: translateX(5%) translateY(50px);
+                    @include icnC;
+                }
+            }
+            &.onView {
+                svg {
+                    &.nodeN {
+                        transform: translateX(15%) translateY(0px);
+                        opacity: 1;
+                    }
+                    &.gitG {
+                        transform: translateX(10%) translateY(0px);
+                        opacity: 1;
+                    }
+                    &.javascriptJ {
+                        transform: translateX(10%) translateY(0px);
+                        opacity: 1;
+                    }
+                    &.pythonP {
+                        transform: translateX(5%) translateY(0px);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .skill-container {
+        padding: 0;
+        margin: 6em;
+        .skill-unit {
+            width: 280px;
+        }
+    }
+}
+
+
+.npmN{
+    position: relative;
+    top: 50px;
+}
+.skill-unit{
+    &.git{
+        position: relative;
+        top: 40px;
+    }
+}

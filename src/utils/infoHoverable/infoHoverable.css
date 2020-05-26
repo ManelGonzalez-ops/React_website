@@ -1,0 +1,36 @@
+.container-clip {
+  width: 200px;
+  background: #adefd1ff;
+  clip-path: circle(10% at 85% 90%);
+  transition: clip-path 0.7s ease,
+  background-color 0.7s ease;
+  position: relative;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 1%;
+  bottom: 5%;
+  position: fixed;
+  color: transparent;
+  line-height: 1.2em;
+  padding: 1.5em;
+}
+
+.container-clip:hover {
+  clip-path: circle(80%);
+  background: #00203fff;
+  color: #adefd1ff;
+  
+  
+}
+
+.icon-path {
+  color: #00203fff;
+  position: absolute;
+  top: 85%;
+  right: 8%;
+  font-size: 2em;
+  cursor: pointer;
+}

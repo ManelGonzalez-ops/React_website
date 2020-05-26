@@ -1,0 +1,109 @@
+
+:root{
+  --font: black;
+  --bg: white;
+  --body: rgb(49, 72, 94);
+  --btn-form: rgb(255, 53, 71)
+}
+
+.carta-contacto {
+  width: 260px; 
+  background: var(--body);
+  padding: 1.5em;
+  color: var(--bg);
+  border: 3px solid var(--body);
+  position: relative;
+  right: 50px;
+  top: -40px;
+  margin-right: 0px;
+}
+
+.carta-contacto > h1 {
+
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 3em;
+  padding: 0;
+  margin-top: 0.3em;
+  margin-bottom: 0.6em;
+  position: relative;
+  left: -5px;
+}
+.carta-contacto ul {
+  margin-bottom: 1.5em;
+  padding-left: 2em;
+}
+.carta-contacto li {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 0.6em;
+ 
+}
+.carta-contacto li p {
+  margin: 0.2em;
+  padding: 0;
+
+}
+
+.carta-contacto .mapa {
+  position: relative;
+}
+
+.carta-contacto .mapaIcn,
+.msg,
+.phone {
+  position: absolute;
+  left: -2em;
+  color: var(--btn-form);
+  top: 3px
+}
+
+.carta-contacto .btn-contact {
+  padding: 1em;
+  background: var(--btn-form);
+color: var(--bg);
+  outline: 0;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  font-size: 1.2em;
+  border: 0;
+  margin: 0 auto;
+  margin-bottom: 3em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.carta-contacto h3 {
+ 
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 0.6em;
+}
+
+.icon-wrap {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.icon-c {
+  width: 2em;
+  height: 2em;
+  color: #007bff;
+}
+
+.contact-btnN{
+ padding: 1em;
+  color: white;
+  background-color: var(--btn-form);
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 40px;
+  width: 110px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1.7em;
+}
