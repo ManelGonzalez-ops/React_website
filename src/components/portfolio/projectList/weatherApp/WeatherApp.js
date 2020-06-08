@@ -1,9 +1,12 @@
-import React, { Fragment, useState, useEffect, useRef } from 'react'
+import React, { Fragment, useState, useEffect, useRef, useContext } from 'react'
 import "./weatherApp.css"
 import InfoHoverable from '../../../../utils/infoHoverable/infoHoverable'
+import { Context } from '../../../Context'
+import Porfolio from  "../../Portfolio"
 
 export default function WeatherApp() {
 
+    const {setHasbeenLoaded} = useContext(Context)
     const [inputWeather, setInputWeather] = useState("")
     const [modalOpen, setModalOpen] = useState(false)
     const maskRef = useRef(null)
@@ -12,7 +15,7 @@ export default function WeatherApp() {
     let ciudad, estado;
 
     const displayModal = () => {
-        console.log("mama")
+        
         setModalOpen(true)
         maskRef.current.classList.add("maskWopen")
         modalRef.current.classList.add("openMw")
@@ -22,7 +25,7 @@ export default function WeatherApp() {
         if(e.target.id === "btn-weathB"){
             e.preventDefault()
         }
-        console.log("mama")
+       
         maskRef.current.classList.remove("maskWopen")
         modalRef.current.classList.remove("openMw")
         setModalOpen(false)
@@ -48,7 +51,7 @@ export default function WeatherApp() {
         async getApi(city, state) {
             const request = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=${this.myid}`)
             const response = await request.json()
-            console.log(response)
+            
 
             return {
                 response
@@ -70,7 +73,7 @@ export default function WeatherApp() {
             document.getElementById("country-weath").innerText = data.response.sys.country
             document.getElementById("tiempo-weath").innerText = (data.response.main.temp - 273).toFixed(1) + " ºC"
             document.getElementById("hum-weath").innerText = "Relative Humidity: " + (data.response.main.humidity + " %")
-            console.log(data.response.main.humidity)
+           
             document.getElementById("desc-weath").innerText = "General: " + data.response.weather[0].description
             document.getElementById("feel-weath").innerText = "Feels like: " + (data.response.main.feels_like - 273).toFixed(1) + " ºC"
             document.getElementById("win-weath").innerText = "Wind speed: " + (data.response.wind.speed * 1.6).toFixed(1) + " km/h"
@@ -101,11 +104,11 @@ export default function WeatherApp() {
     }
 
     function displayManagment(ciry, pais) {
-        console.log("vas?")
+        
         weatherr.getApi(ciry, pais)
             .then(data => {
                 if (data.message === "city not found") {
-                    console.log("comemela")
+                   
                 }
                 else {
                     ui.display(data)
@@ -123,7 +126,7 @@ export default function WeatherApp() {
     function actualizar(e) {
         e.preventDefault()
         if (ciudad.value === "" || estado.value === "") {
-            console.log("si")
+            
         }
         else {
             displayManagment(ciudad.value, estado.value)
@@ -148,6 +151,7 @@ export default function WeatherApp() {
     }, [modalOpen])
 
     useEffect(() => {
+        setHasbeenLoaded(true)
         gestionStorage()
         ciudad = document.getElementById("cityWeath")
         estado = document.getElementById("stateWeath")

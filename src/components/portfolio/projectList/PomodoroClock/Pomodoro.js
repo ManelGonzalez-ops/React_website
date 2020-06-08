@@ -1,13 +1,14 @@
 import React, { Fragment, useState, useContext, useEffect, useRef } from "react"
 import { FaPlay, FaStepForward, FaVolumeUp, FaRegWindowClose, FaRegWindowMinimize, FaPause } from "react-icons/fa"
 import RangeForm from "./Components/RangeForm"
-import { Context } from "./Context"
+import { ContextP } from "./Context"
 import AudioCom from "./Components/AudioCom"
 import Animation from "./customHookAnimate"
 import InfoHoverable from "../../../../utils/infoHoverable/infoHoverable"
+import {Context} from "../../../Context"
 
 const Pomodoro = () => {
-
+  const {setHasbeenLoaded} = useContext(Context)
   const [isOpen, refContenedor, setIsOpen] = Animation()
   const contenedor = useRef(null)
   const [opciones, setOpciones] = useState(false) //Comprobar si está en opciones
@@ -15,7 +16,7 @@ const Pomodoro = () => {
   const [ronda, setRonda] = useState(1) // Comprobar en que ronda está
   //hook auxiliar para cambiar el texto de la UI
   const [worked, setWorked] = useState(false) //Hook auxiliar Comprobar para saber en que subronda estamos
-  const { work, longBreak, shortBreak, range } = useContext(Context)
+  const { work, longBreak, shortBreak, range } = useContext(ContextP)
   const [minutos, setMinutos] = useState(work)  //minutos de la UI para nueva ronda
   const [segundos, setSegundos] = useState(0)   //segundos de la UI pra nueva ronda 
   const [initialTime, setInitialTime] = useState(work) //Hook que guarda el tiempo inicial de la subronda
@@ -43,7 +44,8 @@ const Pomodoro = () => {
 
 
   useEffect(() => {
-    console.log(minutos, "mama")
+    setHasbeenLoaded(true)
+    
     setTime(`${work}:00`)
   }, [])
 
@@ -117,7 +119,7 @@ const Pomodoro = () => {
   }
 
   const timer = (tiempo) => {
-    console.log("me estas cagando?")
+   
     setMinutos(tiempo)
     let keke;
     if (isPlayed) {
@@ -127,7 +129,7 @@ const Pomodoro = () => {
         setSegundos(prev => prev - 1)
 
       }, 1000)
-      console.log(sumatorioRango, "sumatorio rango")
+      
       setTheinterval(keke)     //Importante Estamos utilizando el hook para poder limpiar el intervalo sin demasiados dolores de cabeza, ya que el intervalo queda atrapado por el bloque IF
     }
     else {
@@ -161,7 +163,7 @@ const Pomodoro = () => {
     let porcentaje = (753.98 / (initialTime * 20))
     if (isPlayed) {
       rangoIntervalo = setInterval(() => {
-        console.log("holaaaa")
+       
         setSumatorioRango(prev => prev + porcentaje)
       }, 50)
       setIntervalRango(rangoIntervalo)
@@ -194,10 +196,10 @@ const Pomodoro = () => {
 
             setTime(`${minutos}:00`)
             setRing(prev => !prev)
-            console.log("RIIIIIIIING a trueeeeee")
+            
             ringTimeout = setTimeout(() => {
               setRing(prev => !prev)
-              console.log("cuuuuuuuuuuuuumelañ")
+              
             }, 5000)
           }
         }

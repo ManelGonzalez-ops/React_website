@@ -24,9 +24,9 @@ export default function Footer() {
                 </ul>
             </div>
             <div className="flex-wrapperIcn">
-                <FiCodesandbox className="icon-c" />
+                <a href="https://codesandbox.io/u/ManelGonzalez-ops/sandboxes" rel="noopener noreferrer"><FiCodesandbox className="icon-c" /></a>
                 <a href="https://linkedin.com/in/manelgonzalezescrig"  rel="noopener noreferrer" target="_blank"><AiFillLinkedin className="icon-c" /></a>
-                <AiFillGithub className="icon-c" />
+                <a href="https://github.com/ManelGonzalez-ops" rel="noopener noreferrer" target="_blank"><AiFillGithub className="icon-c" /></a>
             </div>
             <p className="copyw">© 2020 Copyright: <Link to="/">gonzalezescrig.com</Link>
                 </p>

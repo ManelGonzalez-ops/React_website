@@ -1,19 +1,34 @@
 import React, {useState, useRef, useEffect} from "react"
+import {Link} from "react-router-dom"
 import video1 from "../../../images/video1.mp4"
 
  const ExpenseTracker =({hovered})=>{
     const videu = useRef(null)
 
+    const [isHovered, setIsHovered] = useState(false)
+
+    const activate =()=>{
+        setIsHovered(true)
+    }
+    const desactivate =()=>{
+        setIsHovered(false)
+    }
+
+
     useEffect(()=>{
-        if(hovered){
+        if(isHovered){
             videu.current.play()
         }else{
             videu.current.pause()
         }
-        },[hovered])
-     return (<video ref={videu} loop muted playsInline className="project-img" alt="react-expenses">
+        },[isHovered])
+
+     return (<div className="wrapper-img" onMouseEnter={activate} onMouseLeave={desactivate}><video ref={videu} loop muted playsInline className="project-img" alt="react-expenses">
 <source src={video1} type="video/mp4" className="kuku"/>
-</video>)
+</video>
+{isHovered && <Link to="/expenses" className="linki">
+Abrir</Link>}
+</div>)
 
 }
 

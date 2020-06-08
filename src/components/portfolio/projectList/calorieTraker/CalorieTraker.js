@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect, useState, useRef, useContext} from 'react'
 import "./calorieTraker.css"
 import {FaEdit, FaBackspace} from "react-icons/fa"
-import {AiOutlinePlus, AiFillDelete} from "react-icons/ai"
+import {AiFillDelete} from "react-icons/ai"
 import InfoHoverable from "../../../../utils/infoHoverable/infoHoverable"
 import {Context} from "../../../Context"
 
@@ -458,11 +458,12 @@ export default function CalorieTraker({setLoaded}) {
       })(ItemCtrl, UICtrl, StorageCtrl);
       
       useEffect(()=>{
-        setHasbeenLoaded(true)
           App.init()
+          setHasbeenLoaded(true)
       }, [])
       
     return (
+      
         <div className="calorie-cont">
             <nav className="kcal-nav">
                 <h5>Calorie Tracker</h5>
@@ -503,6 +504,8 @@ export default function CalorieTraker({setLoaded}) {
             </section>
             <InfoHoverable textu={texto}/>
         </div>
+        
+        
     )
 }
 

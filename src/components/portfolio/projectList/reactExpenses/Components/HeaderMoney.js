@@ -7,7 +7,7 @@ function HeaderMoney(props) {
     const [income, setIncome] = useState(0)
 
     useEffect(() => {
-        console.log(props.registro)
+        
         if(props.datos){
             checkStorage()
         }

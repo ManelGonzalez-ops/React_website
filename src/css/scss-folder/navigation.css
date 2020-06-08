@@ -1,13 +1,3 @@
-body,
-html {
-  margin: 0;
-  background: #DEE7EF;
-}
-
-.App {
-  position: relative;
-}
-
 :root {
   --body-color: #191973;
   --comp-color: #CE0000;
@@ -19,9 +9,8 @@ html {
 header {
   box-sizing: border-box;
   height: 15vh;
-  position: fixed;
+  position: absolute;
   z-index: 10;
-  background-color: var(--body-color);
   display: flex;
   width: 100%;
   margin: 0;
@@ -72,7 +61,7 @@ header #burger {
 
 header .listaNav {
   display: none;
-  color: var(--lightest);
+  color: #3503ab;
 }
 
 header .listaNav li {
@@ -161,7 +150,7 @@ header nav {
     transition: transform 0.25s ease-in-out;
     height: 2px;
     width: 100%;
-    background-color: var(--lightest);
+    background-color: #F72585;
   }
   header .listaNav li:hover:after {
     transform: scaleX(1);

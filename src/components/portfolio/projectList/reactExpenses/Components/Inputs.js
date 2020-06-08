@@ -7,12 +7,12 @@ function Inputs(props) {
             <h4 className="titulo"><MdAdd className="add-exp"/> Add new transaction</h4>
             <div className="form-group">
                 <label >Text</label>
-                <input type="text" className="inputtt-exp" name="texto" placeholder="..." onChange={props.handleChange} value={props.texto}/>
+                <input type="text" className="inputt-exp" name="texto" placeholder="..." onChange={props.handleChange} value={props.input1}/>
             </div>
             <div className="form-group">
                 <label >Amount</label>
                 <input className="inputt-exp" type="number" name="amount" placeholder="..."
-                onChange={props.handleChange} value={props.amount}/>
+                onChange={props.handleChangeL} value={props.input2}/>
             </div>
             
             <button onClick={props.submitNew}>Añadir</button>

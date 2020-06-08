@@ -40,7 +40,7 @@ export default function Skills() {
 
     useEffect(() => {
 
-        console.log(document.querySelector(".skill-unit"))
+        
         svgArr.forEach(item => {
             observer.observe(item.current)
         }, {threshold: 0.7})
@@ -62,9 +62,8 @@ export default function Skills() {
                         <SvgSass />
                     </span>
                     <div className="wrap-skill">
-                        <h1>SASS</h1>
-                        <p>Saco partido de las ventajas que ofrece de cara a escribir un css más flexible y estructurado.
-                </p>
+                   
+        
                     </div>
                 </div>
                 <div className="skill-unit" ref={reactt}>
@@ -72,79 +71,76 @@ export default function Skills() {
                         <SvgReact />
                     </span>
                     <div className="wrap-skill">
-                        <h1>React</h1>
-                        <p>Baso mis desarrollos en el patrón Flux que ofrece React, dando lugar a codigo mucho más fácil de mantener</p>
+                       
+                        
                     </div>
                 </div>
                 <div className="skill-unit" ref={javascript}>
 
                     <SvgJavascript />
                     <div className="wrap-skill">
-                        <h1>Javascript</h1>
-                        <p>Solido conociminto en Javascript, incluido ES8+, OPP,destructuración, nuevo async/await para promesas</p>
+                   
+                        
                     </div>
                 </div>
                 <div className="skill-unit" ref={css}>
 
                     <SvgCss />
                     <div className="wrap-skill" >
-                        <h1>CSS</h1>
-                        <p>Disfruto escribiendo css, a la vez que sigo el sistema <i>responsive design first</i>, dando una respuesta adaptada al tipo de dispositivo del usuario</p>
+               
+                        
                     </div>
                 </div>
                 <div className="skill-unit htmlL" ref={html}>
 
                     <SvgHtml />
                     <div className="wrap-skill" >
-                        <h1>HTML</h1>
-                        <p>Me centro en escribir HTML5 con correción ya que es la base de todo lo demás</p>
+                    
+                        
                     </div>
                 </div>
                 <div className="skill-unit git" ref={git}>
-
-                    <SvgGit />
+                <SvgGit />
                     <div className="wrap-skill" >
-                        <h1>GIT / Version control Systems</h1>
-                        <p>Una solución imprescindible de cara a mantener tus proyectos y sus distintas fases en entidades ordenadas, lo que acelera el desarrollo.</p>
+                    
+                       
                     </div>
                 </div>
                 <div className="skill-unit" ref={node}>
 
                     <SvgNode />
                     <div className="wrap-skill" >
-                        <h1>Node</h1>
-                        <p>Experiencia creando servidores y sus correspondientes rutas y middleare para gestionan solicitudes HTTPS desde otros dominios</p>
+                        
+                        
                     </div>
                 </div>
                 <div className="skill-unit npmN" ref={npm}>
 
                     <SvgNpm />
                     <div className="wrap-skill" >
-                        <h1>NPM / Package Managers</h1>
-                        <p>Uso de package managers a modo de utilizar librarias y añadir funcionalidades sin muchos dolores de cabeza</p>
+                     
                     </div>
                 </div>
                 <div className="skill-unit" ref={mysql}>
 
                     <SvgMysql />
                     <div className="wrap-skill" >
-                        <h1>MySql /SQL</h1>
-                        <p>Conocimiento de lenguaje SQL con el que hacer querys a partir de solitudes HTTP, y devolviendo de vuelta los datos solicitados</p>
+                       
+                        
                     </div>
                 </div>
                 <div className="skill-unit figma" ref={figma}>
 
                     <Kuku />
                     <div className="wrap-skill">
-                        <h1>Figma</h1>
-                        <p>Creación de diseño previo al desarrollo de codigo.</p>
+                       
+                        
                     </div>
                 </div>
                 <div className="skill-unit" ref={python}>
                     <SvgPython />
                     <div className="wrap-skill" >
-                        <h1>Python</h1>
-                        <p>Conocimiento extenso del lenguaje, en un futuro quiero probar de desarollar backend con Django.</p>
+                     
                     </div>
                 </div>
             </div>
@@ -187,3 +183,4 @@ const Kuku =()=><svg width="144" height="216" viewBox="0 0 144 216" fill="none" 
 </svg>
 
 const SvgPython = () => <svg className="pythonP" width="2500" viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet"><defs><linearGradient x1="12.959%" y1="12.039%" x2="79.639%" y2="78.201%" id="a"><stop stopColor="#387EB8" offset="0%" /><stop stopColor="#366994" offset="100%" /></linearGradient><linearGradient x1="19.128%" y1="20.579%" x2="90.742%" y2="88.429%" id="b"><stop stopColor="#FFE052" offset="0%" /><stop stopColor="#FFC331" offset="100%" /></linearGradient></defs><path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z" fill="url(#a)" /><path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" fill="url(#b)" /></svg>
+

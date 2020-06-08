@@ -38,7 +38,7 @@ function Hero({hasLoaded, contextu}) {
       setIsMAsked(true)
     }, 3000)
     setIsLoaded(true)
-
+console.log("Holaa nena")
     return () => {
       clearTimeout(animationPnp)
     }
@@ -81,8 +81,8 @@ function Hero({hasLoaded, contextu}) {
             amount: 0.15
           }
         })
-          .from([tituloHero.current], {
-            y: 90,
+          .to([tituloHero.current], {
+            y: 0,
             duration: 0.5,
             ease: "power3.out",
             stagger: {
@@ -110,10 +110,10 @@ function Hero({hasLoaded, contextu}) {
         duration: 0.6,
         ease: "power3.out"
       })
-      console.log(document.querySelector(".titulo-nombre").style.mixBlendMode)
+      
       setTimeout(() => {
         document.querySelector(".titulo-nombre").style.mixBlendMode = "normal"
-        console.log(document.querySelector(".titulo-nombre").style)
+      
       }, 300)   
       
     }
@@ -161,43 +161,3 @@ function Hero({hasLoaded, contextu}) {
 }
 export default Hero
 
-//  introTimeline.to(icn1.current, {
-//       opacity: 1,
-//       delay: 0.5,
-//       x: 420,
-//       duration: 1,
-//       y:50,
-
-//     }
-//     )
-//     .to(icn2.current, {
-//       opacity: 1,
-//       delay: -1,
-//       x: 450,
-//       y:80,
-//       duration: 1,
-
-//     }
-//     )
-//     .to(icn3.current, {
-//       opacity: 1,
-//       delay: -1,
-//       x: 430,
-//       y:110,
-//       duration: 1,
-
-//     }
-//     )
-//     .to(icn4.current, {
-//       opacity: 1,
-//      y:140,
-//       x: 400,
-//       delay: -1,
-//       duration: 1,
-//     }
-//     )
-//     .to(hero.current, {
-//       opacity: 1,
-//       duration: 0.5,
-//       delay: -1.4
-//     })

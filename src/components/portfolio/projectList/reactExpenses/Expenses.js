@@ -1,43 +1,39 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useContext, useEffect, useState } from 'react';
 import './expenses.css';
 import HeaderMoney from "./Components/HeaderMoney"
 import TransactionList from "./Components/TransactionList"
 import Inputs from "./Components/Inputs"
 import Popup from "./Components/Popup"
 import InfoHoverable from '../../../../utils/infoHoverable/infoHoverable';
+import { Context } from '../../../Context';
 
 
 
-class Expenses extends Component {
+const Expenses =()=> {
+  const {setHasbeenLoaded} = useContext(Context)
+ 
+  const [texto, setTexto] = useState("")
+  const [amount, setAmount] = useState("")
+  const [registro, setRegistro] = useState("")
+  const [incorrecto, setIncorrecto] = useState(false)
+  const [input1, setInput1] = useState("")
+  const [input2, setInput2] = useState("")
+  const [info, setInfo] = useState("")
 
-  state = {
-    registro: [],
-    amount: "",
-    texto: ""
+  const handleChange = (e) => {
+    const {value} = e.target
+    setInput1(value)
   }
-
-  componentWillMount = () => {
-    if (localStorage.getItem("registro") !== undefined) {
-
-      this.setState({
-        registro: this.fromLocalStorage()
-      })
-    }
-    else {
-      this.setState({
-        registro: []
-      })
-    }
+  const handleChangeL = (e) => {
+    const {value} = e.target
+    setInput2(value)
   }
-
-  handleChange = (e) => {
-    const { name, value } = e.target
-    this.setState({ [name]: value })
-  }
-  toLocalStorage = (object) => {
+ 
+  
+  const toLocalStorage = (object) => {
     localStorage.setItem("registro", JSON.stringify(object))
   }
-  fromLocalStorage = () => {
+  const fromLocalStorage = () => {
 
     const koko = localStorage.getItem("registro")
     const kaka = JSON.parse(koko)
@@ -46,45 +42,42 @@ class Expenses extends Component {
 
 
 
-  submitNew = () => {
-    const { amount, texto } = this.state
-    if (amount == "" || texto == "") {
-      this.setState({ incorrecto: true })
+  const submitNew = () => {
+    
+    if (input1 === "" || input2 === "") {
+      setIncorrecto(true)
       setTimeout(() => {
-        this.setState({ incorrecto: false })
+        setIncorrecto(false)
       }, 2000)
 
     } else {
       const nuevoObjeto = {
-        amount: this.state.amount,
-        texto: this.state.texto
+        amount: input2,
+        texto: input1
       }
 
-      this.setState((prev) => {
-        if (prev.registro === null) {
-          return { registro: [nuevoObjeto] }
-        }
-        else {
-          return { registro: [...prev.registro, nuevoObjeto] }
-        }
+     
+    setRegistro(()=>{
+      if(registro === null){
+        return [nuevoObjeto]
+      }else{
+        return [...registro, nuevoObjeto]
       }
-        , () => this.toLocalStorage(this.state.registro))
-    }
-
-
-  }
-  deleteFromState = (id, e) => {
-    const kaka = Object.assign([], this.state.registro)
-
-    kaka.splice(id, 1)
-
-    this.setState({
-      registro: kaka
     })
-    this.toLocalStorage(kaka)
   }
 
-  Income = (props) => {
+  
+}
+  const deleteFromState = (id, e) => {
+    const nuevaInstancia = Object.assign([], registro)
+
+    nuevaInstancia.splice(id, 1)
+
+    setRegistro(nuevaInstancia)
+    toLocalStorage(nuevaInstancia)
+  }
+
+  const Income = (props) => {
     let ingreso = 0
     props.datos.forEach(item => {
       if (item.amount >= 0) {
@@ -93,33 +86,43 @@ class Expenses extends Component {
     })
     return ingreso
   }
+ useEffect(()=>{
+  toLocalStorage(registro)
+ }, [registro])
+  useEffect(()=>{
+    
+    if (localStorage.getItem("registro") !== undefined) {
 
-  ingresosTotales = this.state.registro
+      setRegistro(fromLocalStorage())
+    }
+    else {
+      setRegistro([])
+    }
 
-  
-
-  render() {
-    const texto = "Le permite añadir ingresos y gastos de modo que estos se descuentan automáticamente, obteniendo el saldo total. Está pequeña aplicación fue desarrollada utilizando React. Persiste los datos en el LocalStorage por lo que la información queda guardada en el buscador."
+    setHasbeenLoaded(true)
+    setInfo("Le permite añadir ingresos y gastos de modo que estos se descuentan automáticamente, obteniendo el saldo total. Está pequeña aplicación fue desarrollada utilizando React. Persiste los datos en el LocalStorage por lo que la información queda guardada en el buscador.")
+  }, [])
+    
     return (
       <Fragment>
       <div className="App-expenses">
         <h1>Expense Tracker</h1>
         <div className="containerPrincipal">
-          <HeaderMoney datos={this.state.registro} />
+          <HeaderMoney datos={registro} />
           
-          <TransactionList registro={this.state.registro} deleteFromState={this.deleteFromState} />
+          <TransactionList registro={registro} deleteFromState={deleteFromState} />
         
           
-          <Popup incorrecto={this.state.incorrecto} />
-          <Inputs handleChange={this.handleChange} texto={this.state.texto} amount={this.state.amount} submitNew={this.submitNew} />
+          <Popup incorrecto={incorrecto} />
+          <Inputs handleChange={handleChange} handleChangeL={handleChangeL} texto={texto} amount={amount} input1={input1} input2={input2}submitNew={submitNew} />
         </div>
       </div>
-      <InfoHoverable textu={texto}/>
+      <InfoHoverable textu={info}/>
       </Fragment>
     );
 
   }
 
-}
+
 
 export default Expenses;

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState, Fragment } from 'react'
+import React, { useEffect, useRef, useState, Fragment, useContext} from 'react'
 import "./memoryCards.css"
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai"
 import InfoHoverable from "../../../../utils/infoHoverable/infoHoverable"
-
+import {Context} from "../../../Context"
 export default function MemoryMusic() {
-
+const {setHasbeenLoaded} = useContext(Context)
     const [questionVal, setQuestionVal] = useState("")
     const [answerVal, setAnswerVal] = useState("")
     const [registro, setRegistro] = useState([])
@@ -239,6 +239,7 @@ useEffect(()=>{
 }, [registro])
 
     useEffect(() => {
+        
         storage.getLocalStorage()
         submitNew.current.addEventListener("click", introducir)
         btnAdd.current.addEventListener("click", cambiarBodyW)
@@ -248,6 +249,7 @@ useEffect(()=>{
         clearBtn.current.addEventListener("click", () => {
             carta.clearCards()
         })
+        setHasbeenLoaded(true)
     }, [])
 
     console.log(carta.data.length, "HHHHHHHHHHHola")

@@ -10,6 +10,10 @@
   text-align: center;
   margin: 2em auto;
 }
+.tituloProj{
+  margin-left: 3rem;
+  color: blue;
+}
 
 .project {
   position: relative;
@@ -71,6 +75,9 @@ width: 100%;
     grid-template-columns: repeat(2, 290px);
     height: 290px;
   }
+  .tituloPort{
+    margin-left: 1em;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -108,3 +115,4 @@ width: 100%;
     transform: translateX(20px);
   }
 }
+

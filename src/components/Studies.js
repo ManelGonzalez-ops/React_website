@@ -12,7 +12,7 @@ export default function Studies() {
     })
 
     const checkWidth =()=>{
-        console.log("HHHHHHHHHHHOLAS b")
+        
         setWindowWidth(window.innerWidth)
     }
     useEffect(()=>{

@@ -28,6 +28,12 @@ html{
 	background-color: #fff;
 	
 }
+body,
+html {
+	margin: 0;
+	background-color: #dee7ef;
+	
+}
 .App {
 	position: relative;
 	overflow-x: hidden;
@@ -53,3 +59,24 @@ html{
   }
 
   
+
+	  .svg-fondo{
+		  position: absolute;
+		  display: flex;
+		  width: 55%;
+		  top: 0;
+		  right: 0;
+		  z-index: -1;
+	  }
+	  .wrapP{
+		  margin: 0;
+		  padding: 0;
+		  position: absolute;
+		  &:before{
+			  content: ""
+			  
+		  }
+	  }
+	  svg:not(:root) {
+		overflow: visible;
+	  }

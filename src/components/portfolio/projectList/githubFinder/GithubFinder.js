@@ -1,8 +1,12 @@
-import React, { Fragment, useEffect, useState} from 'react'
+import React, { Fragment, useEffect, useState, useContext} from 'react'
 import "./githubFinder.css"
 import InfoHoverable from "../../../../utils/infoHoverable/infoHoverable"
+import {Context} from "../../../Context"
+
 
 export default function GithubFinder() {
+
+    const {setHasbeenLoaded} = useContext(Context)
 
     const [inputGit, setInputGit] = useState("")
 
@@ -18,6 +22,7 @@ export default function GithubFinder() {
      gitFSection = document.getElementById("git-result")
         const searchUser = document.getElementById('git-search')
         searchUser.addEventListener('keyup', init_App); 
+        setHasbeenLoaded(true)
         return(()=>{
             searchUser.removeEventListener('keyup', init_App)
         })

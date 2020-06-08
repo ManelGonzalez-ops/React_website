@@ -23,13 +23,13 @@ export default function IconSection() {
     })
     return (
         <Fragment>
-            <a href="https://linkedin.com/in/manelgonzalezescrig" target="_blank" className="icn-circle" ref={icn1}>
+            <a href="https://linkedin.com/in/manelgonzalezescrig" target="_blank" rel="noopener noreferrer" className="icn-circle" ref={icn1}>
                   <Linkedin />
                 </a>
-                <a className="icn-circle" ref={icn2}>
+                <a href="https://codesandbox.io/u/ManelGonzalez-ops/sandboxes" rel="noopener noreferrer" target="_blank" className="icn-circle" ref={icn2}>
                   <CodeSandbox />
                 </a>
-                <a className="icn-circle" ref={icn3}>
+                <a href="https://github.com/ManelGonzalez-ops" rel="noopener noreferrer" target="_blank" className="icn-circle" ref={icn3}>
                   <Github />
                 </a>
         </Fragment>

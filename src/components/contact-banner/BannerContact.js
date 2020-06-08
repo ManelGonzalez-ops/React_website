@@ -29,12 +29,12 @@ export default function BannerContact() {
           682406917
         </li>
       </ul>
-    <a href="../../images/mi_cv.pdf" download className="contact-btnN" >Mi CV</a>
+    <a href="../../images/cvManelGonzalez.pdf" download className="contact-btnN" >Mi CV</a>
       <h3>También estoy en...</h3>
       <div className="icon-wrap">
-        <FiCodesandbox className="icon-c" />
+        <a href="https://codesandbox.io/u/ManelGonzalez-ops/sandboxes" target="_blank" rel="noopener noreferrer"><FiCodesandbox className="icon-c" /></a>
         <a href="https://linkedin.com/in/manelgonzalezescrig" rel="noopener noreferrer" target="_blank"><AiFillLinkedin className="icon-c"/></a>
-        <AiFillGithub className="icon-c"/>
+        <a href="https://github.com/ManelGonzalez-ops" rel="noopener noreferrer"><AiFillGithub className="icon-c"/></a>
       </div>
     </div>
   );

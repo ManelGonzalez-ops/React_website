@@ -1,4 +1,4 @@
-import React, {useContext, useState, useRef, useEffect} from 'react'
+import React, { useState, useRef} from 'react'
 
 const Context = React.createContext()
 
@@ -11,9 +11,7 @@ function ContextProv(props) {
     
     const [hasbeenLoaded, setHasbeenLoaded] = useState(false)
     
-    useEffect(()=>{
-        console.log(portfolio, "en context")
-    },[])
+   
     return (
         <Context.Provider value={{portfolio, skills, sobreMi, contacto, navigation, hasbeenLoaded, setHasbeenLoaded}}>
             {props.children}

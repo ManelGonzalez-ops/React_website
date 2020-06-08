@@ -18,7 +18,7 @@ export default function Animation() {
 
     function abrir() {
         refContenedor.current.style.opacity = 1
-        console.log("xupa")
+
         refContenedor.current.classList.add("cajapeqe")
         
         

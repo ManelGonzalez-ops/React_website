@@ -104,10 +104,7 @@ margin-bottom: 0.3rem;
 .form-group{
   margin: 10px auto;
 }
-.App-expenses input{
-  width: 100%;
-  height: 20px;
-}
+
 
 .incomeExpenses{
   display: flex;
@@ -173,18 +170,19 @@ margin-bottom: 0.3rem;
   background: linear-gradient(60deg, #26c6da, #00acc1);
   color: white;
 }
-.inputt-exp{
+.App-expenses .inputt-exp{
   margin-bottom: 1.2em;
+  height: 45px;
 }
-.inputt-exp, .inputtt-exp{
-box-sizing: border-box;
-width: 100%;
-border-radius: .2em;
-border: 1px solid #ACACAC;
-color: #1B1820;
-padding-left: 1em;
-height: 45px;
-}
+.App-expenses .inputt-exp{
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: .2em;
+  border: 1px solid #ACACAC;
+  color: #1B1820;
+  padding-left: 1em;
+  height: 45px;
+  }
 
 .modal-expenses{
   width: 200px;

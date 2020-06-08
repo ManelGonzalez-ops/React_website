@@ -15,9 +15,9 @@ export default function Form() {
     const input4 = useRef(null)
     
    
-    const submitBtn = useRef(null)
+   
     const addclass = e => {
-        console.log("VAAA O NO")
+        
 
         e.target.nextSibling.classList.add("activo")
     }
@@ -33,7 +33,7 @@ export default function Form() {
     const inputa = [input1, input2, input3, input4]
 
     const checkRegex = (e) => {
-        let isValidSubmit;
+     
         if(!nameVal){
             wrapName.current.classList.add("failed")
             e.preventDefault()
@@ -42,9 +42,9 @@ export default function Form() {
 
 
         const re = regex.test(mailVal)
-        console.log(mailVal)
+       
         if (!re) {
-            console.log("cagaste")
+            
             wrapMail.current.classList.add("failed")
             e.preventDefault()
         } else {
@@ -89,7 +89,7 @@ export default function Form() {
                 <div className="wrap" ref={wrapMail}><input type="text" id="email" name="email" ref={input3} onChange={(e) => { setMailVal(e.target.value) }} value={mailVal} /><div className="remark"></div>
                     <p className="error">Lo siento, el campo es requerido y tiene que ser valido</p></div>
                 <label className="label-contact" htmlFor="message">Mensaje</label>
-                <div className="wrap"><textarea type="text" id="message" name="message" ref={input4} className="textarea" /><div className="remark special"></div>
+                <div className="wrap"><textarea type="text" id="message" name="message" ref={input4} className="textarea" /><div className="remark"></div>
                 </div>
                 <button type="submit" className="cta" onClick={checkRegex}>Enviar</button>
             </form>

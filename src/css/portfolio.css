@@ -1,11 +1,32 @@
 
 .componente-project{
-  margin: 0em auto 3.5em;
+  margin: 0em auto 0em;
 }
 
+.componente-project .tituloProj{
+  margin-left: 3em;
+}
+.componente-project .wrap-title{
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+.componente-project .wrap-title .lineT{
+  height: 1px;
+  background: black;
+  width: 25%;
+
+}
+@media (max-width: 600px){
+  .componente-project .tituloProj{
+    margin-left: 0em;
+    width: auto;
+  }
+}
 
 .project {
- 
+
   position: relative;
   overflow: hidden;
   display: flex;
@@ -15,56 +36,84 @@
   opacity: 0;
 }
 .project.visibleB{
-  animation: simpleFade 0.5s ease forwards;
+  
+  animation: simpleFade 0.6s ease forwards;
 }
 
 @keyframes simpleFade {
-  from{
+  
+  95%{
     opacity: 0;
   }
-  to{
-    opacity: 1;
+  100%{
+opacity: 1;
   }
 }
+
 .project::before {
   content: "";
   position: absolute;
-  background-color: var(--body-color);
+  background-color: black;
   opacity: 0.7;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transform: scale(2.5) rotate(-28deg);
-  transition: transform 0.8s linear;
+  transform: scale(1.5) rotate(-28deg) translate3d(-100%, -100%, 0);
   z-index: 2;
+  animation: initialP 0.7s ease forwards;
+}
+.project:hover.project::before {
+  transform: scale(1.5) rotate(-28deg) translate3d(-100%, -100%, 0);
+  animation: finalP 0s;
 }
 
-.project:hover.project::before {
-  transform: scale(2.5) rotate(-28deg) translate3d(-100%, -100%, 0);
+@keyframes initialP{
+  from{
+    transform: scale(1.5) rotate(-28deg) translate3d(-100%, -100%, 0)
+  }
+  to{
+    transform: scale(1.5) rotate(-28deg) translate3d(0, 0, 0)
+  }
+}
+@keyframes finalP{
+  from{
+    transform: scale(1.5) rotate(-28deg) translate3d(0, 0, 0)
+  }
+  to{
+    transform: scale(1.5) rotate(-28deg) translate3d(-100%, -100%, 0)
+  }
 }
 .project:hover .kuku{
 zoom: 2;
 }
 
 .project-img{
-  
-transition: transform 0.8s ease-in;
-position: absolute;
+/* transition: transform 0.8s ease-in; */
+
 object-fit: cover;
 height: 100%;
 width: 100%;
-
 }
 .project-img.displayed{
   display: unset;
 }
+.wrapper-img{
+  height: 100%;
+width: 100%;
+position: absolute;
+z-index: 0;
+}
+.project:hover .wrapper-img{
+z-index: 5;
+}
+
 .project .titulo-project {
   z-index: 2;
   color: white;
   font-size: 1.5em;
   opacity: 1;
-  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.2s;
+  transition: opacity 0.6s ease, transform 0.4s ease ;
   transform: translateY(0px);
 }
 .linkProject{
@@ -212,3 +261,32 @@ width: 100%;
 .titulo__componente{
   font-size: 3em;
 }
+
+
+.componente-project .linki{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-100px);
+  text-decoration: none;
+  padding: 0.6em 1.5em;
+  background-color: forestgreen;
+  color: white;
+  animation: fadeInlinkProject 0.1s ease forwards;
+  transition: background 0.1s ease;
+}
+.componente-project .linki:hover{
+  background-color: greenyellow;
+}
+@keyframes fadeInlinkProject{
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useRef} from "react";
 import "./infoHoverable.css";
 import {AiOutlineInfo} from "react-icons/ai"
 

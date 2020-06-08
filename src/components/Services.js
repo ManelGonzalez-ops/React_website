@@ -24,7 +24,7 @@ export default function Services() {
 
     useEffect(()=>{
         arrCarta.forEach(item=>{
-            console.log(item, "hola")
+           
             observu.observe(item.current)
         })
     },[])

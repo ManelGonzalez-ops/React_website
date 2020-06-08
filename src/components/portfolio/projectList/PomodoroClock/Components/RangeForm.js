@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styled from "styled-components"
-import {Context} from "../Context"
+import {ContextP} from "../Context"
 
 
 const colors = (props) => (`
@@ -67,7 +67,7 @@ const Kaka = styled.div`
 function RangeForm() {
     
     
-    const {work ,longBreak, shortBreak, range, cambiarDrag} = useContext(Context)
+    const {work ,longBreak, shortBreak, range, cambiarDrag} = useContext(ContextP)
 
 
    

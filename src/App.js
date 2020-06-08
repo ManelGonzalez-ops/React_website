@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from 'react';
+import React, { useEffect, useContext, useRef, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './css/main.css';
 import './css/portfolio.css'; //dentro de src
@@ -31,13 +31,13 @@ function App(props) {
   let { portfolio, contacto, sobreMi, skills, hasbeenLoaded } = useContext(Context)
 
   const navegar = (concepto) => {
-    console.log(concepto, "aquiiiiiiiiiiiiiiiiiiiiiii")
+
     switch (concepto) {
       case "home":
-        window.scrollTo({top: appRef.current.offsetTop, behavior: "smooth"})
+        window.scrollTo({ top: appRef.current.offsetTop, behavior: "smooth" })
         return
       case "portfolio":
-        window.scrollTo({ top: portfolio.current.offsetTop, behavior: "smooth"})
+        window.scrollTo({ top: portfolio.current.offsetTop, behavior: "smooth" })
         return
       case "skills":
         window.scrollTo({ top: skills.current.offsetTop, behavior: "smooth" })
@@ -54,9 +54,6 @@ function App(props) {
 
 
   }
-  const koko = () => {
-    console.log("cooooooooooomemela")
-  }
 
   useEffect(() => {
     appRef.current.style.opacity = 1
@@ -65,6 +62,7 @@ function App(props) {
   return (
     <Router>
       <div className="App" ref={appRef} >
+
         <Switch>
           <Route exact path="/expenses" component={Expenses}></Route>
         </Switch>
@@ -74,27 +72,34 @@ function App(props) {
         </Switch>
         <Switch>
           <Route exact path="/calories" component={CalorieTraker}
-           />
+          />
         </Switch>
         <Switch>
           <Route exact path="/githubFinder" component={GithubFinder}
           />
         </Switch>
         <Switch>
-          <Route path="/weatherApp" component={WeatherApp} 
+          <Route path="/weatherApp" component={WeatherApp}
           />
         </Switch>
         <Switch>
-          <Route path="/pomodoroClock" component={PomodoroClock} 
-         />
+          <Route path="/pomodoroClock" component={PomodoroClock}
+          />
         </Switch>
         <Switch>
           <Route path="/" exact>
-            <WindowWidth />
-            <Nav contextu={navegar} keku={koko} bodyRef={appRef} />
-            <Hero hasLoaded={hasbeenLoaded} contextu={navegar}/>
+            
+            <Nav contextu={navegar} bodyRef={appRef} />
+            <Hero hasLoaded={hasbeenLoaded} contextu={navegar} />
+            
+            <div className="ameba-wrapper1">
+        
+            </div>
             <Services />
             <Portfolio />
+            <div className="ameba-wrapper2">
+            
+            </div>
             <Skills />
             <Studies />
             <div className="responsive-container">
@@ -111,3 +116,4 @@ function App(props) {
 }
 
 export default App;
+
