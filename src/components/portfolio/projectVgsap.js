@@ -35,47 +35,14 @@ const Project = () => {
   const unSelect = () => {
     setIsHovered(false);
   };
-  let observer = new IntersectionObserver(elem => {
-   
-      let counter = 0
-      elem.forEach((element, index) => {
-        
-        if (element.isIntersecting) {
-          counter = counter + 100
-          
-          
-          
-          setTimeout(() => {
-            setNumElem(prev=>prev +1)
-            element.target.classList.add("visibleB")
-  
-          }, counter)
-  
-          // setTimeout(()=>{
-          //   setHasBeenHovered(true)
-          // }, 1200)
-        }
-      }, { threshold: 0.3 })
-    
-    
-  }
-  )
+ 
 
   useEffect(() => {
     setHasBeenHovered(true)
     setTimeout(()=>{
       setDiip(true)
-      listaRef.forEach(project => {
-        // console.log(project.current)
-  
-        observer.observe(project.current)
+      
     }, 1000)
-    
-    
-    })
-    
-  
-
   }, [])
 
   return (
@@ -86,7 +53,7 @@ const Project = () => {
           {hasBeenHovered && <p className="titulo-project">Expense Tracker</p>}
         </Link>
         <SuspenseHOC fallback={<div>Loadind...</div>}>
-          {numElem >= 1 && <ExpenseTrackerr />}
+          <ExpenseTrackerr />
         </SuspenseHOC>
 
       </div>
@@ -95,7 +62,7 @@ const Project = () => {
           <p className="titulo-project">Memory Cards</p>
         </Link>
         {hasBeenHovered && <SuspenseHOC >
-          {numElem >= 2 && <MemoryCardss />}
+          <MemoryCardss />
         </SuspenseHOC>}
 
       </div>
@@ -104,7 +71,7 @@ const Project = () => {
           <p className="titulo-project">Calorie Tracker</p>
         </Link>
         {hasBeenHovered && <SuspenseHOC >
-          {numElem >= 3 && <CalorieTracker />}
+          <CalorieTracker />
         </SuspenseHOC>}
       </div>
       <div className="project" onMouseEnter={hover} onMouseLeave={unSelect} ref={proj4}>
@@ -112,7 +79,7 @@ const Project = () => {
           <p className="titulo-project">Github Finder</p>
         </Link>
         {hasBeenHovered && <SuspenseHOC >
-          {numElem >= 4 && <GithubFinder />}
+          <GithubFinder />
         </SuspenseHOC>}
       </div>
       <div className="project" onMouseEnter={hover} onMouseLeave={unSelect} ref={proj5}>
@@ -120,7 +87,7 @@ const Project = () => {
           <p className="titulo-project">Weather App</p>
         </Link>
         {hasBeenHovered && <SuspenseHOC >
-          {numElem >= 5 && <WeatherApp />}
+          <WeatherApp />
         </SuspenseHOC>}
       </div>
       <div className="project" onMouseEnter={hover} onMouseLeave={unSelect} ref={proj6}>
@@ -128,7 +95,7 @@ const Project = () => {
           <p className="titulo-project">Pomodoro Clock</p>
         </Link>
         {hasBeenHovered && <SuspenseHOC >
-          {numElem >= 6 && <Pomodoro/>}
+          <Pomodoro/>
         </SuspenseHOC>}
       </div>
     </Fragment>)}</Fragment>

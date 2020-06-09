@@ -11,14 +11,12 @@
 }
 .footer-cont li{
     list-style: none;
-}
-.footer-cont li{
     margin-bottom: 0.5em;
 }
+
 .footer-cont ul{
     display: inline-block;
     padding: 0;
-    
     
 }
 .footer-cont .list-item {
@@ -33,6 +31,11 @@
     margin: 0 auto;
     width: 200px;
     justify-content: space-around;
+}
+
+.flex-wrapperIcn a{
+    color: #AEAEAE;
+    opacity: 0.6;
 }
 
 @media (min-width: 600px){
