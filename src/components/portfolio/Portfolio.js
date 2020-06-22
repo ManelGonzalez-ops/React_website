@@ -7,22 +7,22 @@ import { Context } from "../Context"
 export default function App() {
   let { portfolio } = useContext(Context)
   const tituloT = useRef(null)
-  //   const observerT = new IntersectionObserver(item=>{
-  //     if(item[0].isIntersecting)
-  // item[0].target.classList.add("visibleB")
-  //   },{threshold: 0})
+    const observerT = new IntersectionObserver(item=>{
+      if(item[0].isIntersecting)
+  item[0].target.classList.add("visibleB")
+    },{threshold: 0.5})
 
   useEffect(() => {
 
-    // observerT.observe(tituloT.current)
+    observerT.observe(tituloT.current)
   }, [])
   return (
     <Fragment>
 
       <div className="componente-project" ref={portfolio}>
-        <div className="wrap-title">
-          <div className="lineT"></div><h1 className="tituloProj">PORTFOLIO</h1>
-        </div>
+      <div className="title-container colocadorSkill" ref={tituloT}><span className="title-line"></span>
+                <h1 className="titulo__componente">Portfolio</h1>
+            </div>
         <div className="contenedor-project">
           <Project />
         </div>

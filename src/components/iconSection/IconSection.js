@@ -1,40 +1,54 @@
-import React, {Fragment, useEffect, useRef} from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import "./iconSection.css"
+import styled from "styled-components"
 
-export default function IconSection() {
-    const icn1 = useRef(null)
-    const icn2 = useRef(null)
-    const icn3 = useRef(null)
-    const icnArr = [icn1, icn2, icn3]
-    const observer = new IntersectionObserver(items=>{
-        items.forEach(item=>{
-            if(item.isIntersecting){
-                item.target.style.willChange = "transform, opacity"
-                item.target.childNodes[0].style.willChange = "transform, opacity"
-                item.target.classList.add("onVisible")
-            }
-        })
-    },{threshold: 0.8})
-
-    useEffect(()=>{
-        icnArr.forEach(item=>{
-            observer.observe(item.current)
-        })
+export default function IconSection({movileDisplay, innerWidth}) {
+  
+  const icn1 = useRef(null)
+  const icn2 = useRef(null)
+  const icn3 = useRef(null)
+  const icnArr = [icn1, icn2, icn3]
+  const observer = new IntersectionObserver(items => {
+    items.forEach(item => {
+      if (item.isIntersecting) {
+        item.target.style.willChange = "transform, opacity"
+        item.target.childNodes[0].style.willChange = "transform, opacity"
+        item.target.classList.add("onVisible")
+      }
     })
-    return (
-        <Fragment>
-            <a href="https://linkedin.com/in/manelgonzalezescrig" target="_blank" rel="noopener noreferrer" className="icn-circle" ref={icn1}>
-                  <Linkedin />
-                </a>
-                <a href="https://codesandbox.io/u/ManelGonzalez-ops/sandboxes" rel="noopener noreferrer" target="_blank" className="icn-circle" ref={icn2}>
-                  <CodeSandbox />
-                </a>
-                <a href="https://github.com/ManelGonzalez-ops" rel="noopener noreferrer" target="_blank" className="icn-circle" ref={icn3}>
-                  <Github />
-                </a>
-        </Fragment>
-    )
+  }, { threshold: 0.8 })
+
+  useEffect(() => {
+    icnArr.forEach(item => {
+      console.log("ahora")
+      observer.observe(item.current)
+    })
+    
+  }, [innerWidth])
+
+  const setDisplay = (props) => (`
+      display: ${props.vista};
+    `)
+  const IconoContainer = styled.div`
+    ${props => setDisplay(props)};
+   
+    `
+
+  return (
+    <IconoContainer vista={movileDisplay}>
+      <a href="https://linkedin.com/in/manelgonzalezescrig" target="_blank" rel="noopener noreferrer" className="icn-circle" ref={icn1}>
+        <Linkedin />
+      </a>
+      <a href="https://codesandbox.io/u/ManelGonzalez-ops/sandboxes" rel="noopener noreferrer" target="_blank" className="icn-circle" ref={icn2}>
+        <CodeSandbox />
+      </a>
+      <a href="https://github.com/ManelGonzalez-ops" rel="noopener noreferrer" target="_blank" className="icn-circle" ref={icn3}>
+        <Github />
+      </a>
+    </IconoContainer>
+  )
 }
+
 
 const Linkedin = () =>
   <svg width="50%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +67,7 @@ const CodeSandbox = () =>
     <path d="M4.16724 12.5L25.9454 0L47.7313 12.5L47.9188 37.3937L25.9454 50L4.16724 37.5V12.5ZM8.52036 17.6672V27.5797L15.486 31.4531V38.7781L23.7625 43.5641V26.3281L8.52036 17.6672ZM43.3922 17.6672L28.1501 26.3266V43.5625L36.4188 38.7766V31.4609L43.3938 27.5797L43.3922 17.6672ZM10.6938 13.7531L25.9125 22.3875L41.1625 13.6797L33.0985 9.09844L25.9938 13.1516L18.8485 9.05L10.6938 13.7531Z" fill="black" />
   </svg>
 
-const Github =()=>(<svg id="Bold" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" width="50%" xmlns="http://www.w3.org/2000/svg"><path d="m12.29 21.499c3.73 0 8.94.09 10.835-3.701.715-1.449.875-3.122.875-4.7h-.001c0-2.073-.575-4.047-1.95-5.651.255-.766.385-1.573.385-2.385 0-1.064-.24-1.598-.73-2.563-2.24 0-3.69.42-5.39 1.742-1.31-.311-2.67-.455-4.02-.455-1.495 0-2.986.154-4.435.495-1.725-1.336-3.175-1.781-5.44-1.781-.484.965-.729 1.499-.729 2.563 0 .811.125 1.632.385 2.414-1.38 1.589-2.075 3.548-2.075 5.621 0 1.578.281 3.266 1.01 4.701 1.97 3.835 7.49 3.7 11.28 3.7zm-5.289-9.99c.95 0 1.865.168 2.8.297 3.418.52 5.215-.297 7.31-.297 2.339 0 3.675 1.915 3.675 4.087 0 4.349-4.015 5.012-7.53 5.012h-2.41c-3.5 0-7.52-.667-7.52-5.012 0-2.172 1.334-4.087 3.675-4.087z"/><path d="m16.655 18.323c1.29 0 1.835-1.692 1.835-2.727s-.545-2.727-1.835-2.727-1.835 1.692-1.835 2.727.545 2.727 1.835 2.727z"/><path d="m7.47 18.323c1.29 0 1.835-1.692 1.835-2.727s-.546-2.726-1.835-2.726-1.835 1.692-1.835 2.727.545 2.726 1.835 2.726z"/></svg>)
+const Github = () => (<svg id="Bold" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" width="50%" xmlns="http://www.w3.org/2000/svg"><path d="m12.29 21.499c3.73 0 8.94.09 10.835-3.701.715-1.449.875-3.122.875-4.7h-.001c0-2.073-.575-4.047-1.95-5.651.255-.766.385-1.573.385-2.385 0-1.064-.24-1.598-.73-2.563-2.24 0-3.69.42-5.39 1.742-1.31-.311-2.67-.455-4.02-.455-1.495 0-2.986.154-4.435.495-1.725-1.336-3.175-1.781-5.44-1.781-.484.965-.729 1.499-.729 2.563 0 .811.125 1.632.385 2.414-1.38 1.589-2.075 3.548-2.075 5.621 0 1.578.281 3.266 1.01 4.701 1.97 3.835 7.49 3.7 11.28 3.7zm-5.289-9.99c.95 0 1.865.168 2.8.297 3.418.52 5.215-.297 7.31-.297 2.339 0 3.675 1.915 3.675 4.087 0 4.349-4.015 5.012-7.53 5.012h-2.41c-3.5 0-7.52-.667-7.52-5.012 0-2.172 1.334-4.087 3.675-4.087z" /><path d="m16.655 18.323c1.29 0 1.835-1.692 1.835-2.727s-.545-2.727-1.835-2.727-1.835 1.692-1.835 2.727.545 2.727 1.835 2.727z" /><path d="m7.47 18.323c1.29 0 1.835-1.692 1.835-2.727s-.546-2.726-1.835-2.726-1.835 1.692-1.835 2.727.545 2.726 1.835 2.726z" /></svg>)
 
 
 

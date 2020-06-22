@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef, Fragment } from 'react';
+import React, { useEffect, useLayoutEffect, useState, useContext, useRef, Fragment, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './css/main.css';
 import './css/portfolio.css'; //dentro de src
@@ -24,14 +24,16 @@ import Footer from "./components/footer/Footer"
 
 
 
+const Yo = React.lazy(() => import("./images/manelPhoto.js"))
 function App(props) {
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const appRef = useRef(null)
+  const contactoContainer = useRef(null)
+  let { portfolio, sobreMi, skills, hasbeenLoaded } = useContext(Context)
 
-  let { portfolio, contacto, sobreMi, skills, hasbeenLoaded } = useContext(Context)
+  
 
   const navegar = (concepto) => {
-
     switch (concepto) {
       case "home":
         window.scrollTo({ top: appRef.current.offsetTop, behavior: "smooth" })
@@ -46,17 +48,25 @@ function App(props) {
         window.scrollTo({ top: sobreMi.current.offsetTop, behavior: "smooth" })
         return
       case "contacto":
-        window.scrollTo({ top: contacto.current.offsetTop, behavior: "smooth" })
+        window.scrollTo({ top: contactoContainer.current.offsetTop, behavior: "smooth" })
         return
       default: return
     }
-
-
-
   }
 
-  useEffect(() => {
-    appRef.current.style.opacity = 1
+  const updateWidth =()=>{
+    console.log("mama")
+    setWindowWidth(window.innerWidth)
+  }
+
+  useLayoutEffect(() => {
+
+      
+      window.addEventListener("resize", updateWidth) 
+      
+      return ()=> document.removeEventListener("resize", updateWidth)
+    
+    
   }, [])
 
   return (
@@ -88,23 +98,28 @@ function App(props) {
         </Switch>
         <Switch>
           <Route path="/" exact>
-            
-            <Nav contextu={navegar} bodyRef={appRef} />
-            <Hero hasLoaded={hasbeenLoaded} contextu={navegar} />
-            
-            <div className="ameba-wrapper1">
-        
+            <div className="thefondo">
+              <Suspense fallback={<h2>Loading...</h2>}>
+                <Yo />
+              </Suspense>
+              <Nav contextu={navegar} bodyRef={appRef} />
+
+              <Hero hasLoaded={hasbeenLoaded} contextu={navegar} />
+              <IconSection 
+              movileDisplay={(windowWidth || window.innerWidth) < 500 ? "block" : "none"} innerWidth={windowWidth}/>
             </div>
+
             <Services />
             <Portfolio />
-            <div className="ameba-wrapper2">
-            
-            </div>
+
             <Skills />
+
             <Studies />
-            <div className="responsive-container">
+
+            <div className="responsive-container" ref={contactoContainer}>
               <Form />
-              <IconSection />
+              <IconSection 
+              movileDisplay={(windowWidth || window.innerWidth) > 500 ? "block" : "none"} innerWidth={windowWidth}/>
             </div>
             <Footer />
           </Route>

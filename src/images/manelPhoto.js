@@ -1,10 +1,10 @@
 import React from 'react'
-import imagen from "./manel.jpg"
+import imagen from "./IMG-20190806-WA0018.jpg"
 
 export default function ManelPhoto() {
     return (
 
-        <img className="profile-photo" src={imagen} alt="Manel.jpg" />
+        <img className="foto-layer" src={imagen} alt="Manel.jpg" />
 
     )
 }

@@ -8,16 +8,16 @@ export default function Form() {
     const input1 = useRef(null)
     const wrapName = useRef(null)
     const [nameVal, setNameVal] = useState("")
-    const input2 = useRef(null)
+   
     const input3 = useRef(null)
     const wrapMail = useRef(null)
     const [mailVal, setMailVal] = useState("")
     const input4 = useRef(null)
-    
-   
-   
+
+
+
     const addclass = e => {
-        
+
 
         e.target.nextSibling.classList.add("activo")
     }
@@ -30,11 +30,11 @@ export default function Form() {
 
     }
 
-    const inputa = [input1, input2, input3, input4]
+    const inputa = [input1, input3, input4]
 
     const checkRegex = (e) => {
-     
-        if(!nameVal){
+
+        if (!nameVal) {
             wrapName.current.classList.add("failed")
             e.preventDefault()
         }
@@ -42,9 +42,9 @@ export default function Form() {
 
 
         const re = regex.test(mailVal)
-       
+
         if (!re) {
-            
+
             wrapMail.current.classList.add("failed")
             e.preventDefault()
         } else {
@@ -54,7 +54,7 @@ export default function Form() {
         }
     }
     useEffect(() => {
-       
+
         inputa.forEach(item => {
             item.current.addEventListener("focus", addclass)
             item.current.addEventListener("blur", removeClass)
@@ -79,15 +79,13 @@ export default function Form() {
                 <input type="hidden" name="form-name" value="form1" />
                 <h2>Contact Form</h2>
 
-                <label className="label-contact" htmlFor="fname">First Name</label>
-                <div className="wrap" ref={wrapName}><input type="text" id="fname" name="fname" ref={input1} onChange={(e)=>{setNameVal(e.target.value)}} value={nameVal} /><div className="remark"></div><p className="error">Lo siento, pero tiene que facilitar un nombre</p></div>
-
-                <label className="label-contact" htmlFor="lname">Last Name</label>
-                <div className="wrap"><input type="text" id="lname" name="lname" ref={input2} /><div className="remark"></div></div>
+                <label className="label-contact" htmlFor="fname">Name</label>
+                <div className="wrap" ref={wrapName}><input type="text" id="fname" name="fname" ref={input1} onChange={(e) => { setNameVal(e.target.value) }} value={nameVal} /><div className="remark"></div><p className="error">Sorry, but you have to provide a name</p></div>
+            
 
                 <label className="label-contact" htmlFor="email">Email Address</label>
                 <div className="wrap" ref={wrapMail}><input type="text" id="email" name="email" ref={input3} onChange={(e) => { setMailVal(e.target.value) }} value={mailVal} /><div className="remark"></div>
-                    <p className="error">Lo siento, el campo es requerido y tiene que ser valido</p></div>
+                    <p className="error">Sorry, but this field is required and has to be valid</p></div>
                 <label className="label-contact" htmlFor="message">Mensaje</label>
                 <div className="wrap"><textarea type="text" id="message" name="message" ref={input4} className="textarea" /><div className="remark"></div>
                 </div>

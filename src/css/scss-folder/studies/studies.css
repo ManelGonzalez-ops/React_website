@@ -97,53 +97,15 @@
 }
 
 .cont-estudios .timelinen li.first {
-  border: 2px solid #5b28ec;
   box-sizing: border-box;
 }
 
 .cont-estudios .timelinen li.first .line-text {
-  background-color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.first:before {
-  border-color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.first span {
-  color: #5b28ec;
+  background-color: #150144;
 }
 
 .cont-estudios .timelinen li.second {
-  border: 2px solid #5b28ec;
   box-sizing: border-box;
-}
-
-.cont-estudios .timelinen li.second .line-text {
-  background-color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.second:before {
-  border-color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.second span {
-  color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.third {
-  border: 2px solid #5b28ec;
-}
-
-.cont-estudios .timelinen li.third .line-text {
-  background-color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.third:before {
-  border-color: #5b28ec;
-}
-
-.cont-estudios .timelinen li.third span {
-  color: #5b28ec;
 }
 
 @media (max-width: 500px) {

@@ -6,13 +6,17 @@
 .label-contact {
   display: block;
   font-weight: bold;
-  margin-top: 1.5em;
+  margin-top: 1em;
   margin-bottom: .5em;
   transform: translate3d(10px, 220%, 0px);
   position: relative;
   z-index: 1;
   transition: transform 0.5s ease, opacity 0.5s ease;
   opacity: 0.6;
+
+  &:first-of-type{
+margin-top: 1.5em;
+  }
 
 }
 
@@ -79,7 +83,7 @@ input[type=text] {
 }
 
 .cta {
-  border: 3px solid #8040FF;
+  border: 3px solid $dark-blue;
   box-sizing: border-box;
   outline: 0;
   display: block;
@@ -88,7 +92,7 @@ input[type=text] {
   text-align: center;
   text-decoration: none;
   color: white;
-  background: #8040FF;
+  background: $dark-blue;
  box-sizing: border-box;
   font-weight: bold;
   font-size: 1.2em;
@@ -97,7 +101,7 @@ input[type=text] {
   transition: all 0.1s ease;
 }
 .cta:active{
-color: #8040FF;
+color: $dark-blue;
   background-color: white;
 }
 
@@ -139,6 +143,9 @@ color: #8040FF;
 }
 
 @media (min-width: 500px){
+  .input[type=text]{
+    height: 35px;
+  }
   .container__form{
     .cta{
       width: 30%
@@ -162,7 +169,7 @@ color: #8040FF;
   .container__form{
     // width: 65%;
     width: 100%;
-    padding: 2em;
+    padding: 1.5em;
     
     h2 {
       font-size: 3.5em;

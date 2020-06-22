@@ -167,6 +167,7 @@ z-index: 5;
     grid-template-columns: repeat(3, minmax(300px, 25%));
   column-gap: 2em;
   row-gap: 2em;
+  padding-top: 0;
   }
 }
 /* .contenedor-project{
@@ -253,7 +254,7 @@ z-index: 5;
 
 .componente-project .linki{
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   opacity: 0;
   transform: translateX(-100px);
@@ -261,7 +262,7 @@ z-index: 5;
   padding: 0.6em 1.5em;
   background-color: forestgreen;
   color: white;
-  animation: fadeInlinkProject 0.1s ease forwards;
+  animation: fadeInlinkProject 0.3s ease forwards;
   transition: background 0.1s ease;
 }
 .componente-project .linki:hover{
@@ -270,11 +271,11 @@ z-index: 5;
 @keyframes fadeInlinkProject{
   from{
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-100px) scale(0.5);
   }
   to{
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
 

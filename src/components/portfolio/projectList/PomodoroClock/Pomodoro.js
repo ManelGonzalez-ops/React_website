@@ -14,7 +14,7 @@ const Pomodoro = () => {
   const [opciones, setOpciones] = useState(false) //Comprobar si está en opciones
   const [isPlayed, setIsPlayed] = useState(false) // Comprobar si el play está activado
   const [ronda, setRonda] = useState(1) // Comprobar en que ronda está
-  //hook auxiliar para cambiar el texto de la UI
+
   const [worked, setWorked] = useState(false) //Hook auxiliar Comprobar para saber en que subronda estamos
   const { work, longBreak, shortBreak, range } = useContext(ContextP)
   const [minutos, setMinutos] = useState(work)  //minutos de la UI para nueva ronda
@@ -115,6 +115,8 @@ const Pomodoro = () => {
           setColor("var(--short-color)")
         }
         break
+      default:
+        setColor("var(--circle-color)")
     }
   }
 

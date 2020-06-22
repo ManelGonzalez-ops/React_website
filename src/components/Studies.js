@@ -9,7 +9,7 @@ export default function Studies() {
         if(item[0].isIntersecting){
             item[0].target.classList.add("visibleB")
         }
-    })
+    }, {threshold: 0.5})
 
     const checkWidth =()=>{
         
