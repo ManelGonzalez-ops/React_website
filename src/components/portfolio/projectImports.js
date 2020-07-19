@@ -8,21 +8,14 @@ import video5 from "../../images/weatherApp.mp4"
 import video6 from "../../images/githubFinder.mp4"
 
 
-// const ExpenseTrackerr = React.lazy(() => import("./videos/ExpenseTracker"))
-// const MemoryCardss = React.lazy(() => import("./videos/memoryCards"))
-// const GithubFinder = React.lazy(() => import("./videos/githubFinder"))
-// const CalorieTracker = React.lazy(() => import("./videos/CalorieTracker"))
-// const WeatherApp = React.lazy(() => import("./videos/WeatherApp"))
-// const Pomodoro = React.lazy(() => import("./videos/Pomodoro"))
-
-
 
 const componentArray = [
     {
-        name: "Expense Tracker",
-        video: video1,
-        route: "/expenses"
-    },
+        name: "Pomodoro Clock",
+        video: video3,
+        route: "/pomodoroClock" 
+    }
+   ,
     {
         name: "Memory Cards",
         video: video2,
@@ -30,7 +23,7 @@ const componentArray = [
     },
     {
         name: "Github Finder",
-        video: video3,
+        video: video6,
         route: "/githubFinder" 
     },
     {
@@ -44,10 +37,11 @@ const componentArray = [
         route: "/weatherApp" 
     },
     {
-        name: "Pomodoro Clock",
-        video: video6,
-        route: "/pomodoroClock" 
+        name: "Expense Tracker",
+        video: video1,
+        route: "/expenses"
     }
+   
 ]
 
 export default componentArray

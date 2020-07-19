@@ -13,12 +13,23 @@ export default class Nav extends React.Component {
         }
         this.navRef = null
         this.handleScroll = this.handleScroll.bind(this)
+        
     }
 
     componentDidMount() {
         setTimeout(() => {
             window.addEventListener("scroll", this.handleScroll);
         }, 2000)
+        
+        setTimeout(()=>{
+            if(document.querySelector(".listaNav")){
+                document.querySelector(".listaNav").childNodes.forEach(link=>{
+                    link.style.opacity = 1
+                })
+            }
+            
+        }, 400)
+        
 
     }
 
@@ -29,7 +40,7 @@ export default class Nav extends React.Component {
     handleScroll() {
         
         if(this.navRef){
-        if (document.body.getBoundingClientRect().top <= -1250) {
+        if (document.body.getBoundingClientRect().top <= -600) {
             
             if(this.navRef.style.position !== "fixed"){
                 this.navRef.style.top = "0vh"
@@ -54,6 +65,8 @@ export default class Nav extends React.Component {
             this.setState({
                 show: document.body.getBoundingClientRect().top > scrollPos,
                 scrollPos: document.body.getBoundingClientRect().top,
+                
+            }, ()=>{
                 
             });
         }
@@ -91,6 +104,7 @@ export default class Nav extends React.Component {
 
 
 
+
     render() {
 
         const CloseNav = () => (
@@ -125,7 +139,7 @@ export default class Nav extends React.Component {
                     <h1 onClick={() => this.switchState("home")}><YoSvg /></h1>
                     {/* <a className="nameN" href="#">Manel González <span>Escrig</span></a> */}
                     <nav>
-                        <ul className="listaNav">
+                        <ul className="listaNav" >
                             <li onClick={() => this.switchState("portfolio")}>Portfolio</li>
                             <li onClick={() => this.switchState("skills")}><span className="hiperoverlay">Skills</span></li>
                             <li onClick={() => this.switchState("sobremi")}><span className="hiperoverlay">Sobre mi</span></li>

@@ -17,6 +17,7 @@ header {
   margin: 0;
   align-items: center;
   top: 0;
+  overflow-x: hidden;
 }
 
 header h1 {
@@ -48,7 +49,6 @@ header #burger {
   position: absolute;
   right: 9%;
   top: 50%;
-  transform: translateY(-50%);
   width: 32px;
   cursor: pointer;
 }
@@ -90,11 +90,10 @@ header nav {
 
 .list-movil {
   box-sizing: border-box;
-  animation: navMovil 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: navMovil 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   position: fixed;
   z-index: 30;
   transform: translateY(200px);
-  mix-blend-mode: difference;
   padding: 0;
   margin: 0;
   width: 50%;
@@ -109,7 +108,28 @@ header nav {
 .list-movil li {
   margin-bottom: 0.5em;
   font-size: 2.5em;
+  font-weight: bold;
   list-style: none;
+}
+
+.list-movil li:nth-of-type(1) {
+  color: #ffbe0bff;
+}
+
+.list-movil li:nth-of-type(2) {
+  color: #fb5607ff;
+}
+
+.list-movil li:nth-of-type(3) {
+  color: #ff006eff;
+}
+
+.list-movil li:nth-of-type(4) {
+  color: #8338ecff;
+}
+
+.list-movil li:nth-of-type(5) {
+  color: #3a86ffff;
 }
 
 @media (min-width: 680px) {
@@ -142,17 +162,11 @@ header nav {
     position: relative;
     cursor: pointer;
     color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
-  header .listaNav li:after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transition: transform 0.25s ease-in-out;
-    height: 2px;
-    width: 100%;
-    background-color: #F72585;
+  header .listaNav li:hover {
+    filter: brightness(170%);
   }
   header .listaNav li.pseudo-fuera:before {
     background: none;
@@ -214,7 +228,7 @@ header nav {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #3e3759;
+  background-color: white;
   z-index: 20;
   transform: scaleY(0);
   transform-origin: 0 0;
@@ -290,10 +304,10 @@ header.navClosed {
   margin-left: 5px;
   padding: 0;
   font-size: 1.4em;
-  color: #F72585;
+  color: #f72585;
   color: deeppink;
   color: #e75480;
-  color: #3F03EA;
+  color: #3f03ea;
   position: relative;
   z-index: 13;
   transform: translateX(0px);
@@ -335,7 +349,6 @@ header.navClosed {
 
 .hero .btn-principal {
   padding: 0.6em 1.5em;
-  margin-top: 4em;
   text-decoration: none;
   font-size: 1.15em;
   box-sizing: border-box;
@@ -344,19 +357,22 @@ header.navClosed {
   outline: 0;
   opacity: 1;
   transform: translateY(50px);
-  background-color: #1D1C34;
-  transition: color 0.5s ease, background 0.5s ease;
+  background-color: #1d1c34;
+  transition: color 0.5s ease, background 0.5s ease;
   margin-left: 3px;
-  border: 3px solid #1D1C34;
+  border: 3px solid #1d1c34;
   cursor: pointer;
 }
 
 .hero .btn-principal:hover {
-  color: #1D1C34;
+  color: #1d1c34;
   background-color: white;
 }
 
-.icono1, .icono2, .icono3, .icono4 {
+.icono1,
+.icono2,
+.icono3,
+.icono4 {
   position: absolute;
   top: 330px;
   left: 250px;
@@ -402,11 +418,11 @@ header.navClosed {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background-color: #3503AB;
+  background-color: #3503ab;
   z-index: 11;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .hero {
     display: block;
     margin-left: 2em;
@@ -417,6 +433,9 @@ header.navClosed {
     float: right;
     shape-outside: circle();
   }
+  .hero .btn-principal {
+    margin-top: 2rem;
+  }
   .titulo-nameB {
     font-size: 5em;
     line-height: 0.9em;
@@ -426,6 +445,9 @@ header.navClosed {
 @media (max-width: 800px) {
   .hero {
     padding-left: 2rem;
+  }
+  .hero .btn-principal {
+    margin-top: -2rem;
   }
 }
 
@@ -1033,11 +1055,13 @@ input[type=text]:focus {
   }
 }
 
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: regular;
-  src: url(../images/Montserrat-Regular.ttf);
+#INDmenu-btn {
+  transition: none !important;
+  transform: scale(0.7);
+}
+
+.INDhasDragTooltip #INDWrap #INDmenu-btn:before {
+  transition: none !important;
 }
 
 .clientWidth {
@@ -1048,6 +1072,7 @@ input[type=text]:focus {
 
 html {
   overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-family: "Montserrat";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1132,7 +1157,7 @@ svg:not(:root) {
     height: 120vh;
   }
   .foto-layer {
-    object-fit: cover;
+    object-fit: cover !important;
     height: 100%;
   }
 }

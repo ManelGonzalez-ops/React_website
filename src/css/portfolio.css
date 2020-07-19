@@ -52,7 +52,7 @@
   animation: initialP 0.7s ease forwards;
 }
 .project:hover.project::before {
-  transform: scale(1.5) rotate(-28deg) translate3d(-100%, -100%, 0);
+  transform: scale(1.6) rotate(-70deg) translate3d(-100%, -100%, 0);
   animation: finalP 0s;
 }
 
@@ -91,6 +91,7 @@ width: 100%;
 width: 100%;
 position: absolute;
 z-index: 0;
+/* cursor: pointer; */
 }
 .project:hover .wrapper-img{
 z-index: 5;
@@ -260,21 +261,33 @@ z-index: 5;
   transform: translateX(-100px);
   text-decoration: none;
   padding: 0.6em 1.5em;
-  background-color: forestgreen;
+  background-color: rgb(53, 3, 171);
   color: white;
-  animation: fadeInlinkProject 0.3s ease forwards;
-  transition: background 0.1s ease;
+  animation: fadeInlinkProject 0.8s ease forwards;
 }
 .componente-project .linki:hover{
   background-color: greenyellow;
 }
 @keyframes fadeInlinkProject{
-  from{
+  0%{
     opacity: 0;
     transform: translateX(-100px) scale(0.5);
+    color: white;
   }
-  to{
+  50%{
+    transform: translateX(0) scale(1);
+    background-color: rgb(53, 3, 171);
+    color: white;
+  }
+  70%{
     opacity: 1;
+    background-color: white;
+    transform: translateX(0) scale(1);
+    color: rgb(53, 3, 171);
+  }
+  100%{
+    opacity: 1;
+    background-color: rgb(53, 3, 171);
     transform: translateX(0) scale(1);
   }
 }

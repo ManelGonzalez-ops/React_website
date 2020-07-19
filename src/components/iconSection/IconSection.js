@@ -8,21 +8,25 @@ export default function IconSection({movileDisplay, innerWidth}) {
   const icn2 = useRef(null)
   const icn3 = useRef(null)
   const icnArr = [icn1, icn2, icn3]
-  const observer = new IntersectionObserver(items => {
-    items.forEach(item => {
-      if (item.isIntersecting) {
-        item.target.style.willChange = "transform, opacity"
-        item.target.childNodes[0].style.willChange = "transform, opacity"
-        item.target.classList.add("onVisible")
-      }
-    })
-  }, { threshold: 0.8 })
+  
 
   useEffect(() => {
+    if ('IntersectionObserver' in window) { 
+    const observer = new IntersectionObserver(items => {
+      items.forEach(item => {
+        if (item.isIntersecting) {
+          item.target.style.willChange = "transform, opacity"
+          item.target.childNodes[0].style.willChange = "transform, opacity"
+          item.target.classList.add("onVisible")
+        }
+      })
+    }, { threshold: 0.8 })
+
     icnArr.forEach(item => {
-      console.log("ahora")
+      
       observer.observe(item.current)
     })
+  }
     
   }, [innerWidth])
 

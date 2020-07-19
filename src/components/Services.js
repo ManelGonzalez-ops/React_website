@@ -9,24 +9,30 @@ export default function Services() {
     const carta3 = useRef(null)
     const arrCarta = [carta1, carta2, carta3]
 
-    var observu = new IntersectionObserver(items=>{
-        let counter = 0
-    items.forEach(item=>{  
-        if(item.isIntersecting){
-            counter = counter + 200
-            setTimeout(()=>{
-                item.target.classList.add("visibleC")
-            }, counter)
-            
-        }
-    })
-    })
 
     useEffect(()=>{
-        arrCarta.forEach(item=>{
-           
-            observu.observe(item.current)
-        })
+       let kaka = setTimeout(()=>{
+            const observu = new IntersectionObserver (items=>{
+                let counter = 0
+            items.forEach(item=>{  
+                if(item.isIntersecting){
+                    counter = counter + 200
+                    setTimeout(()=>{
+                        item.target.classList.add("visibleC")
+                    }, counter)
+                    
+                }
+            })
+            }, {threshold: 0.2})
+        
+                arrCarta.forEach(item=>{
+                   
+                    observu.observe(item.current)
+                })
+        }, 2)
+return ()=>{
+    clearTimeout(kaka)
+}
     },[])
 
     

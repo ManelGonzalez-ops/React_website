@@ -46,7 +46,36 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    
+    <script>
+      (function(doc, head, body){
+        window.interdeal = {
+          sitekey  : "862eb88cbe252ef51b1c9c42773202ac",
+          Position : "Right",
+          Menulang : "ES",
+          btnStyle : {
+            vPosition : ["80%", undefined],
+            scale : [0.55, 0.55],
+            icon : {
+                type : 4,
+                shape : "rounded",
+                outline : false
+              },
+            color : {
+              main : "#e6051f",
+              second : "#ffffff"
+            }
+          }
+        };
+        var coreCall             = doc.createElement('script');
+        coreCall.src             = 'https://cdn.equalweb.com/core/2.0.7/accessibility.js';
+        coreCall.defer           = true;
+        coreCall.integrity       = 'sha512-I5mpAzD33VLeDeg+yaCpP8hPXDSn/9JoRrA/mrWZyqyQXtgpW9W4RvZOx5E0FxQydYR3lpdwIbQm+o4lGYoQ8A==';
+        coreCall.crossOrigin     = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true );
+        
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+      })(document, document.head, document.body);
+      </script>
 </body>
 
 </html>

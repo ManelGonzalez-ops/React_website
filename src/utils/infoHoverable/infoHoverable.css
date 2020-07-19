@@ -16,6 +16,7 @@
   color: transparent;
   line-height: 1.2em;
   padding: 1.5em;
+  z-index: 10;
 }
 
 .container-clip:hover {

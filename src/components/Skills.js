@@ -5,7 +5,7 @@ import {Context} from "../components/Context"
 
 export default function Skills() {
 
-    let {skills} = useContext(Context)
+    let context = useContext(Context)
     const sass = useRef(null)
     const reactt = useRef(null)
     const html = useRef(null)
@@ -25,6 +25,9 @@ export default function Skills() {
 
     
 
+    useEffect(() => {
+        if ('IntersectionObserver' in window) {
+        
     let observer = new IntersectionObserver(items => {
         items.forEach(item => {
             if (item.isIntersecting) {
@@ -39,20 +42,18 @@ export default function Skills() {
         }
     })
 
-    useEffect(() => {
-
-        
         svgArr.forEach(item => {
             observer.observe(item.current)
         }, {threshold: 0.7})
 
         tituloObs.observe(title.current)
 
-    }, [])
+    }
+}, [])
 
     return (
         <Fragment>
-            <div className="colocador" ref={skills}>
+            <div className="colocador" ref={context && context.skills}>
             <div className="title-container colocadorSkill" ref={title}><span className="title-line"></span>
                 <h1 className="titulo__componente">Skills</h1>
             </div>

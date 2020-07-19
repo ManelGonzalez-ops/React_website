@@ -29,7 +29,7 @@ export default function BannerContact() {
           682406917
         </li>
       </ul>
-    <a href="../../images/cvManelGonzalez.pdf" download className="contact-btnN" >Mi CV</a>
+    <a href={process.env.PUBLIC_URL + "images/cvManelGonzalez.pdf"} download className="contact-btnN" >Mi CV</a>
       <h3>También estoy en...</h3>
       <div className="icon-wrap">
         <a href="https://codesandbox.io/u/ManelGonzalez-ops/sandboxes" target="_blank" rel="noopener noreferrer"><FiCodesandbox className="icon-c" /></a>

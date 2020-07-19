@@ -2,32 +2,35 @@ import React, {useRef, useEffect, useState, useContext} from 'react'
 import BannerContact from "./contact-banner/BannerContact"
 import {Context} from "./Context"
 export default function Studies() {
-    const {sobreMi} = useContext(Context)
+    const contexto = useContext(Context)
     const tituloE = useRef("")
     const [windowWidth, setWindowWidth] = useState("")
-    const tituloObs = new IntersectionObserver(item=>{
-        if(item[0].isIntersecting){
-            item[0].target.classList.add("visibleB")
-        }
-    }, {threshold: 0.5})
+    
 
     const checkWidth =()=>{
         
         setWindowWidth(window.innerWidth)
     }
     useEffect(()=>{
+        if ('IntersectionObserver' in window) {
+        const tituloObs = new IntersectionObserver(item=>{
+            if(item[0].isIntersecting){
+                item[0].target.classList.add("visibleB")
+            }
+        }, {threshold: 0.5})
         tituloObs.observe(tituloE.current)
         window.addEventListener("resize", checkWidth)
         setWindowWidth(window.innerWidth)
         return ()=>{
             window.removeEventListener("resize", checkWidth)
         }
-    }, [])
+    }
+}, [])
     useEffect(()=>{
         setWindowWidth(window.innerWidth)
     }, [windowWidth])
     return (
-        <div className="cont-estudios" ref={sobreMi}>
+        <div className="cont-estudios" ref={contexto && contexto.sobreMi}>
             <div className="title-container" ref={tituloE}><span className="title-line"></span>
                 <h1 className="titulo__componente">Sobre mí</h1>
             </div>

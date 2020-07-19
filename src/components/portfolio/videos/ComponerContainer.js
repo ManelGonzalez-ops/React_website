@@ -24,7 +24,7 @@ export default function ComponerContainer({video, route}) {
     return (
         
     <div className="wrapper-img" onMouseEnter={activate} onMouseLeave={desactivate}>
-        <video ref={videu} loop muted playsInline className="project-img" alt="react-expenses">
+        <video ref={videu} loop playsInline className="project-img" alt="react-expenses">
         <source src={video} type="video/mp4" className="kuku" />
     </video>
         {isHovered && <Link to={route} className="linki">

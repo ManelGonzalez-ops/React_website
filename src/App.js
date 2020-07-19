@@ -1,9 +1,8 @@
-import React, { useEffect, useLayoutEffect, useState, useContext, useRef, Fragment, Suspense } from 'react';
+import React, { useLayoutEffect, useState, useContext, useRef} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './css/main.css';
 import './css/portfolio.css'; //dentro de src
 import Nav from "./components/navigation/Nav"
-import WindowWidth from "./utils/window_width"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
 import Studies from "./components/Studies"
@@ -22,14 +21,18 @@ import { Context } from "./components/Context"
 import IconSection from "./components/iconSection/IconSection"
 import Footer from "./components/footer/Footer"
 
+import imagenHq from "./images/IMG-20190806-WA0018.jpg"
+import imagenLq from "./images/lowqimg.jpg"
+import ImagenPnp from "./images/ImagenPnp"
 
 
-const Yo = React.lazy(() => import("./images/manelPhoto.js"))
+
+// const Yo = React.lazy(() => import("./images/manelPhoto.js"))
 function App(props) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const appRef = useRef(null)
   const contactoContainer = useRef(null)
-  let { portfolio, sobreMi, skills, hasbeenLoaded } = useContext(Context)
+  let context = useContext(Context)
 
   
 
@@ -39,13 +42,13 @@ function App(props) {
         window.scrollTo({ top: appRef.current.offsetTop, behavior: "smooth" })
         return
       case "portfolio":
-        window.scrollTo({ top: portfolio.current.offsetTop, behavior: "smooth" })
+        window.scrollTo({ top: context.portfolio.current.offsetTop, behavior: "smooth" })
         return
       case "skills":
-        window.scrollTo({ top: skills.current.offsetTop, behavior: "smooth" })
+        window.scrollTo({ top: context.skills.current.offsetTop, behavior: "smooth" })
         return
       case "sobremi":
-        window.scrollTo({ top: sobreMi.current.offsetTop, behavior: "smooth" })
+        window.scrollTo({ top: context.sobreMi.current.offsetTop, behavior: "smooth" })
         return
       case "contacto":
         window.scrollTo({ top: contactoContainer.current.offsetTop, behavior: "smooth" })
@@ -99,14 +102,15 @@ function App(props) {
         <Switch>
           <Route path="/" exact>
             <div className="thefondo">
-              <Suspense fallback={<h2>Loading...</h2>}>
-                <Yo />
-              </Suspense>
+             
+              <ImagenPnp
+              lq={imagenLq}
+             hq={imagenHq}
+              />
               <Nav contextu={navegar} bodyRef={appRef} />
 
-              <Hero hasLoaded={hasbeenLoaded} contextu={navegar} />
-              <IconSection 
-              movileDisplay={(windowWidth || window.innerWidth) < 500 ? "block" : "none"} innerWidth={windowWidth}/>
+              <Hero hasLoaded={context && context.hasbeenLoaded} contextu={navegar} />
+              
             </div>
 
             <Services />

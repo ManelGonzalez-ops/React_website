@@ -3,7 +3,7 @@ import { Context } from "./Context"
 import { wrap } from 'gsap'
 
 export default function Form() {
-    const { contacto } = useContext(Context)
+    let context = useContext(Context)
 
     const input1 = useRef(null)
     const wrapName = useRef(null)
@@ -73,7 +73,7 @@ export default function Form() {
 
 
     return (
-        <div ref={contacto}>
+        <div ref={context && context.contacto}>
 
             <form className="container__form" name="theFoorm" method="post" >
                 <input type="hidden" name="form-name" value="form1" />

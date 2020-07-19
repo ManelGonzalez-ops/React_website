@@ -13,13 +13,14 @@ $dark-blue: #1D1C34;
 
 @import "scss-folder/form/form.scss";
 
-@font-face {
-	font-family: "Montserrat";
-	font-style: normal;
-	font-weight: regular;
-	src: url(../images/Montserrat-Regular.ttf);
+#INDmenu-btn{
+	transition: none !important;
+	transform: scale(0.7);
 }
 
+.INDhasDragTooltip #INDWrap #INDmenu-btn:before{
+	transition: none !important;
+}
 .clientWidth {
 	display: inline-block;
 	position: fixed;
@@ -31,7 +32,9 @@ html {
 	// overflow-y: scroll;
 	overflow-x: hidden;
 	// font-family: helvetica neue;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-family: "Montserrat";
+
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -116,7 +119,7 @@ svg:not(:root) {
 		height: 120vh;
 	}
 	.foto-layer {
-	object-fit: cover;
+	object-fit: cover !important;
 	height: 100%;
 	}
 }
