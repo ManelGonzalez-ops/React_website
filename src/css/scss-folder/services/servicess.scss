@@ -5,15 +5,12 @@
     padding-top: 4em;
     padding-bottom: 4em;
     .cont-services {
-        padding: 2em;
+        padding: calc(1rem + 1%);
 
         // scroll-snap-align: center;
 
         .cartaSkill {
             margin: 2em auto;
-            
-            
-            padding: 1em;
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89),

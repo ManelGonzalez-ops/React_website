@@ -10,7 +10,6 @@ header {
   height: 15vh;
   position: relative;
   z-index: 10;
-  position: absolute;
   display: flex;
   width: 100%;
   margin: 0;
@@ -258,10 +257,9 @@ header nav {
 }
 
 header {
-  transform-origin: top;
-  transition: transform 200ms cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s ease;
 }
 
 header.navClosed {
-  transform: scaleY(0);
+  transform: translateY(-200px);
 }

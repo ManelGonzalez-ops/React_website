@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useContext, useRef} from 'react';
+import React, { useLayoutEffect, useState, useContext, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './css/main.css';
 import './css/portfolio.css'; //dentro de src
@@ -29,12 +29,13 @@ import ImagenPnp from "./images/ImagenPnp"
 
 // const Yo = React.lazy(() => import("./images/manelPhoto.js"))
 function App(props) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
   const appRef = useRef(null)
+  const renderer = useRef(0)
   const contactoContainer = useRef(null)
   let context = useContext(Context)
 
-  
+
 
   const navegar = (concepto) => {
     switch (concepto) {
@@ -57,20 +58,24 @@ function App(props) {
     }
   }
 
-  const updateWidth =()=>{
+  const updateWidth = () => {
     console.log("mama")
-    setWindowWidth(window.innerWidth)
+    context.setViewWidth(window.innerWidth)
   }
+
+
 
   useLayoutEffect(() => {
 
-      
-      window.addEventListener("resize", updateWidth) 
-      
-      return ()=> document.removeEventListener("resize", updateWidth)
-    
-    
+
+    window.addEventListener("resize", updateWidth)
+
+    return () => document.removeEventListener("resize", updateWidth)
+
+
   }, [])
+
+
 
   return (
     <Router>
@@ -102,18 +107,19 @@ function App(props) {
         <Switch>
           <Route path="/" exact>
             <div className="thefondo">
-             
+
               <ImagenPnp
-              lq={imagenLq}
-             hq={imagenHq}
+                lq={imagenLq}
+                hq={imagenHq}
               />
-              <Nav contextu={navegar} bodyRef={appRef} />
+             <Nav contextu={navegar} bodyRef={appRef} /> 
 
               <Hero hasLoaded={context && context.hasbeenLoaded} contextu={navegar} />
-              
+
             </div>
 
             <Services />
+            <h1>times rendered: {renderer.current++}</h1>
             <Portfolio />
 
             <Skills />
@@ -122,8 +128,8 @@ function App(props) {
 
             <div className="responsive-container" ref={contactoContainer}>
               <Form />
-              <IconSection 
-              movileDisplay={(windowWidth || window.innerWidth) > 500 ? "block" : "none"} innerWidth={windowWidth}/>
+              <IconSection
+                movileDisplay={(context.viewWidth || window.innerWidth) > 900 ? "block" : "none"} innerWidth={context.viewWidth} />
             </div>
             <Footer />
           </Route>

@@ -20,10 +20,10 @@ const Project = () => {
 
         
           <div className="project" key={index}>
-            <Link to="/expenses" className="linkProject">
-              <p className="titulo-project">{componente.name}</p>
-            </Link>
             <ComponerContainer video={componente.video} route={componente.route} />
+            {/* <Link to="/expenses" className="linkProject">
+              <p className="titulo-project">{componente.name}</p>
+            </Link> */}
           </div>
        
       ))

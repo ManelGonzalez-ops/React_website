@@ -11,7 +11,6 @@ header {
 	height: 15vh;
 	position: relative;
 	z-index: 10;
-	position: absolute;
 	display: flex;
 	width: 100%;
 	margin: 0;
@@ -178,21 +177,6 @@ $azure: #3a86ffff;
 				opacity: 0;
 				transition: opacity 0.5s ease;
 
-				// &.linkAct{
-				// 	opacity: 1;
-				// }
-
-				// &:after{
-				// 	content: "";
-				// 	position: absolute;
-				// 	bottom: -5px;
-				// 	left: 0;
-				// 	transform: scaleX(0);
-				// 	transition: transform 0.25s ease-in-out;
-				// 	height: 2px;
-				// 	width: 100%;
-				// 	background-color: #F72585;
-				// }
 					&:hover{
 						filter: brightness(170%);
 		
@@ -323,13 +307,9 @@ header{
 }
 
 header {
-	transform-origin: top;
-	-webkit-transition: transform 200ms cubic-bezier(1, 0, 0, 1);
-	-moz-transition: transform 200ms cubic-bezier(1, 0, 0, 1);
-	-o-transition: transform 200ms cubic-bezier(1, 0, 0, 1);
-	transition: transform 200ms cubic-bezier(1, 0, 0, 1);
+	transition: transform 0.4s ease;
 	&.navClosed {
-		transform: scaleY(0);
+		transform: translateY(-200px);
 		
 	}
 	

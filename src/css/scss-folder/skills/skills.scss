@@ -10,13 +10,12 @@
         display: flex;
         
         flex-wrap: wrap;
-       justify-content: center;
+       justify-content: space-evenly;
        padding: 5em;
        padding-top: 0;
         .skill-unit{
-            margin: 2.5rem;
+            margin: 1rem 2.5rem;
             display: flex;
-           
             flex-direction: column;
             justify-content: center;
             opacity: 0;
@@ -49,7 +48,7 @@
     .skill-container{
         padding: 1rem;
         .skill-unit{
-            margin: 2rem;
+            margin: 1rem;
             transform: scale(0.6);
             svg{
                 width: 100px ;
@@ -62,60 +61,12 @@
         }
     }
 }
-// .skill-container {
-//     * {
-//         box-sizing: border-box;
-//     }
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-//     text-align: center;
-//     margin-bottom: 11em;
-//     .skill-unit {
-//         transform: translateY(50px);
-//         margin: 0.5em;
-//         padding: 1em;
-//         font-size: 1rem;
-//         transition: all 0.5s ease;
-//         margin-top: 0;
-//         margin-bottom: 0;
-//         p,
-//         h1 {
-//             opacity: 0;
-//             transform: translateY(60px);
-//             transition: all 0.7s ease;
-//         }
-//         h1{
-            
-//             margin: 0 auto;
-//         }
-//         p{
-//             text-align: left;
-//             width: 100%;
-//         }
+@media (min-width: 500px){
+.skill-container{
+    justify-content: center;
+}
+}
 
-//         svg {
-//             width: 100%;
-//             max-height: 200px;
-//             opacity: 0;
-//             transform: translateY(50px);
-//             transition: all 0.5s ease;
-//         }
-
-//         &.onView {
-//             svg,
-//             .html {
-//                 opacity: 1;
-//                 transform: translateY(0px);
-//             }
-//             p,
-//             h1 {
-//                 opacity: 1;
-//                 transform: translateX(0px);
-//             }
-//         }
-//     }
-// }
 .title-container {
     display: flex;
     align-items: center;
@@ -153,37 +104,6 @@
         }
     }
 }
-// .colocador{
-//     transform: translateY(150px);
-// }
-
-// @media (max-width: 1000px){
-//     .title-container{
-//         transform: translateY(-50px);
-//     }
-// }
-
-// @media (max-width: 480px){
-//     .title-container{
-//         .title-line{
-//             margin-right: 0.3em;
-//         }
-//     }
-// }
-
-// @media (min-width: 500px) {
-//     .skill-container {
-//         margin: 1em;
-//         justify-content: space-around;
-//         padding: 1em;
-//         margin-bottom: 6em;
-//         .skill-unit {
-          
-//             margin: 1em;
-//             font-size: 1rem;
-//         }
-//     }
-// }
 
 @keyframes lineGrow {
     from {
@@ -207,101 +127,4 @@
     }
 }
 
-
-// @media (min-width: 700px) {
-//     .skill-container {
-//         .skill-unit {
-            
-//             font-size: 1rem;
-//             svg {
-                
-//                 &.htmlL {
-//                     transform: translateX(20%) translateY(50px);
-//                     @include icnC;
-//                 }
-//             }
-//             &.onView {
-//                 svg {
-//                     &.htmlL {
-//                         transform: translateX(20%) translateY(0px);
-//                         opacity: 1;
-//                     }
-                   
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @media (min-width: 1050px) {
-//     .skill-container {
-//         padding: 0;
-//         margin: 5em;
-//         .skill-unit {
-            
-//             svg {
-//                 &.nodeN {
-//                     transform: translateX(15%) translateY(50px);
-//                     @include icnC;
-//                 }
-//                 &.gitG {
-//                     height: 140px;
-//                     transform: translateX(10%) translateY(50px);
-//                     @include icnC;
-//                 }
-//                 &.javascriptJ {
-//                     transform: translateX(10%) translateY(50px);
-//                     @include icnC;
-//                 }
-//                 &.pythonP {
-//                     transform: translateX(5%) translateY(50px);
-//                     @include icnC;
-//                 }
-//             }
-//             &.onView {
-//                 svg {
-//                     &.nodeN {
-//                         transform: translateX(15%) translateY(0px);
-//                         opacity: 1;
-//                     }
-//                     &.gitG {
-//                         position: relative;
-//                         left: 10%;
-//                         transform: translateX(10%) translateY(0px);
-//                         opacity: 1;
-//                     }
-//                     &.javascriptJ {
-//                         transform: translateX(10%) translateY(0px);
-//                         opacity: 1;
-//                     }
-//                     &.pythonP {
-//                         transform: translateX(5%) translateY(0px);
-//                         opacity: 1;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-// @media (min-width: 1200px) {
-//     .skill-container {
-//         padding: 0;
-//         margin: 6em;
-//         .skill-unit {
-           
-//         }
-//     }
-// }
-
-
-// .npmN{
-//     position: relative;
-//     top: 50px;
-// }
-// .skill-unit{
-//     &.git{
-//         position: relative;
-//         top: 40px;
-//     }
-// }
 

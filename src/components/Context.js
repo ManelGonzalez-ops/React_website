@@ -10,10 +10,12 @@ function ContextProv(props) {
     const navigation = useRef(0)
     
     const [hasbeenLoaded, setHasbeenLoaded] = useState(false)
-    
+    const [viewWidth, setViewWidth] = useState(window.innerWidth)
+    //avoid Nav's multiple rerenders on scrollpos change when button view more //work is toggled
+    const [isDisbabled, setIsDisabled] = useState(false)
    
     return (
-        <Context.Provider value={{portfolio, skills, sobreMi, contacto, navigation, hasbeenLoaded, setHasbeenLoaded}}>
+        <Context.Provider value={{portfolio, skills, sobreMi, contacto, navigation, hasbeenLoaded, setHasbeenLoaded, viewWidth, setViewWidth}}>
             {props.children}
         </Context.Provider>
     )

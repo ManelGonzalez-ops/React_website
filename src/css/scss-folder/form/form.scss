@@ -11,7 +11,7 @@
   transform: translate3d(10px, 220%, 0px);
   position: relative;
   z-index: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
   opacity: 0.6;
 
   &:first-of-type{
@@ -114,7 +114,7 @@ color: $dark-blue;
     width: 0;
     opacity: 1;
     background-color: #6265e4;
-    transition: width 0.8s ease;
+    transition: width 0.4s ease;
   }
 
   position: relative;
@@ -129,7 +129,7 @@ color: $dark-blue;
     position: absolute;
     left: 0;
     width: 100%;
-    transition: width 0.8s ease;
+    transition: width 0.4s ease;
     background-color: #6265e4;
 }
 .wrap .activo.special.remark{

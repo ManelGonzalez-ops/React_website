@@ -12,6 +12,8 @@ export default function ImagenPnp({hq, lq}) {
     }, [])
     
     return (
+    
         <img src={url} className="foto-layer" alt="mama"/>
+     
     )
 }

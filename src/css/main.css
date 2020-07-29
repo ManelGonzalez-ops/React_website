@@ -11,7 +11,6 @@ header {
   height: 15vh;
   position: relative;
   z-index: 10;
-  position: absolute;
   display: flex;
   width: 100%;
   margin: 0;
@@ -259,12 +258,11 @@ header nav {
 }
 
 header {
-  transform-origin: top;
-  transition: transform 200ms cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s ease;
 }
 
 header.navClosed {
-  transform: scaleY(0);
+  transform: translateY(-200px);
 }
 
 .hero {
@@ -478,12 +476,11 @@ header.navClosed {
 }
 
 .container-services .cont-services {
-  padding: 2em;
+  padding: calc(1rem + 1%);
 }
 
 .container-services .cont-services .cartaSkill {
   margin: 2em auto;
-  padding: 1em;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), transform 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), box-shadow 0.5s ease-in-out;
@@ -536,6 +533,244 @@ header.navClosed {
   }
   .container-services .cont-services .cartaSkill .iconCard {
     font-size: 2em;
+  }
+}
+
+.content {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.content .text__block {
+  flex: 1;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .text__block .reveal {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  line-height: 1.4rem;
+}
+
+.content .text__block .reveal.visible {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.content .text__block .reveal li {
+  list-style: none;
+  margin: 0.3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .text__block .reveal li h5 {
+  color: #3503ab;
+}
+
+.content .text__block .reveal .titulo-tech {
+  margin-bottom: 0;
+  color: #764abc;
+  margin-top: 0;
+}
+
+.content .text__block .reveal .tech {
+  display: flex;
+  padding: 0;
+  margin-top: 0;
+}
+
+.content .text__block p.reveal {
+  margin-bottom: 2rem;
+}
+
+.content .text__block .btn-group {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2.5rem;
+  order: 3;
+}
+
+.content .text__block .btn-group button {
+  background: #3503ab;
+  outline: none;
+  border: 0;
+  padding: 0.5rem 1.2rem;
+  border: 3px solid #3503ab;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.content .text__block .btn-group button:first-of-type {
+  margin-left: -1.5rem;
+  color: white;
+}
+
+.content .text__block .btn-group button:first-of-type:hover {
+  background-color: white;
+  color: #3503ab;
+}
+
+.content .text__block .btn-group button:last-of-type {
+  margin-left: 1.5rem;
+  background-color: white;
+  color: #3503ab;
+}
+
+.content .text__block .btn-group button:last-of-type:hover {
+  background-color: #3503ab;
+  color: white;
+}
+
+.content .image__block {
+  flex: 1;
+  width: 100%;
+}
+
+.content .image__block .reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.content .image__block .reveal.visible {
+  opacity: 1;
+}
+
+.content .image__block .image {
+  background-size: cover;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content .image__block .image .actual-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.image {
+  position: relative;
+}
+
+.image .inner-btn-section {
+  display: flex;
+  height: 100%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.image .inner-btn-section button {
+  border: 0;
+  outline: 0;
+  opacity: 0;
+  border-radius: 1.5rem;
+  height: 2.5rem;
+  width: 4.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.image .inner-btn-section button:first-of-type {
+  margin-left: -1.5rem;
+}
+
+.image .inner-btn-section button:last-of-type {
+  margin-left: 1.5rem;
+}
+
+.image .inner-btn-section button.visible {
+  opacity: 1;
+}
+
+.image .inner-btn-section button .icon {
+  font-size: 1.5rem;
+}
+
+.image .layer {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  background: black;
+  position: absolute;
+  visibility: hidden;
+}
+
+.image .layer.visible {
+  visibility: visible;
+}
+
+@media (min-width: 500px) {
+  .content {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 800px) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: none;
+  }
+  .content.reversed {
+    flex-direction: row-reverse;
+  }
+  .content .image__block {
+    width: auto;
+    order: 2;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .content .image__block .image {
+    background-size: cover;
+    width: auto;
+    height: auto;
+  }
+  .content .image__block .image .actual-img {
+    width: 100%;
+  }
+  .content .text__block {
+    order: 1;
+    padding: 0;
+    margin: 1rem;
+    padding: 0 2rem;
+  }
+  .content .text__block .descripcion {
+    order: 1;
+  }
+  .content .text__block .tech-container {
+    order: 2;
+  }
+  .content .text__block .reveal li {
+    flex-direction: row;
+    margin: 10px;
+  }
+  .content .text__block .reveal li span {
+    margin: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .upper-positionator {
+    padding: 2rem;
   }
 }
 
@@ -771,7 +1006,7 @@ header.navClosed {
 .skill-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 5em;
   padding-top: 0;
 }
@@ -781,7 +1016,7 @@ header.navClosed {
 }
 
 .skill-container .skill-unit {
-  margin: 2.5rem;
+  margin: 1rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -817,7 +1052,7 @@ header.navClosed {
     padding: 1rem;
   }
   .skill-container .skill-unit {
-    margin: 2rem;
+    margin: 1rem;
     transform: scale(0.6);
   }
   .skill-container .skill-unit svg {
@@ -826,6 +1061,12 @@ header.navClosed {
   .skill-container .skill-unit svg.express {
     width: 130px;
     box-sizing: content-box;
+  }
+}
+
+@media (min-width: 500px) {
+  .skill-container {
+    justify-content: center;
   }
 }
 
@@ -892,7 +1133,7 @@ header.navClosed {
   transform: translate3d(10px, 220%, 0px);
   position: relative;
   z-index: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
   opacity: 0.6;
 }
 
@@ -1004,7 +1245,7 @@ input[type=text]:focus {
   width: 0;
   opacity: 1;
   background-color: #6265e4;
-  transition: width 0.8s ease;
+  transition: width 0.4s ease;
 }
 
 .wrap .activo.remark {
@@ -1013,7 +1254,7 @@ input[type=text]:focus {
   position: absolute;
   left: 0;
   width: 100%;
-  transition: width 0.8s ease;
+  transition: width 0.4s ease;
   background-color: #6265e4;
 }
 

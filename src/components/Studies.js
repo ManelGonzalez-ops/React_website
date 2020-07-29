@@ -17,7 +17,7 @@ export default function Studies() {
             if(item[0].isIntersecting){
                 item[0].target.classList.add("visibleB")
             }
-        }, {threshold: 0.5})
+        }, {threshold: 0.9})
         tituloObs.observe(tituloE.current)
         window.addEventListener("resize", checkWidth)
         setWindowWidth(window.innerWidth)

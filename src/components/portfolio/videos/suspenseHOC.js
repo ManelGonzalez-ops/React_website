@@ -1,18 +1,7 @@
 import React, {Suspense} from 'react'
 
- function SuspenseHOC(props) {
-     
-    return (
-        <Suspense fallback={spiner}>
-            {props.children}
-        </Suspense>
-    )
-}
 
-export default React.memo(SuspenseHOC)
-
-
-const spiner = <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="red">
+const Spiner = <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="red">
      <g fill="none" fill-rule="evenodd">
          <g transform="translate(1 1)" stroke-width="2">
              <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
@@ -28,3 +17,15 @@ const spiner = <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www
          </g>
      </g>
  </svg>
+
+ const SuspenseHOC =(props)=> {
+     
+    return (
+        <Suspense fallback={<Spiner/>}>
+            {props.children}
+        </Suspense>
+    )
+}
+
+export default SuspenseHOC
+
