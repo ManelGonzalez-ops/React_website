@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, Fragment } from 'react'
-import NodeEcommerce from "../../images/nodeEcommerce.png"
+
 import ContentMain from "./ContentMain"
 import { SvgReact, Node, Redux, Mongo, Postgres, Django, Mysql, Socket, Javascript } from "./svgs"
+import NodeEcommerce from "../../images/nodeEcommerce.png"
+import PythonEcommerce from "../../images/Python_Ecommerce.png"
+import chatta from "../../images/chatta.png"
 
 const data = [
     {
@@ -26,10 +29,16 @@ const data = [
             }
         ],
         img: NodeEcommerce
+        ,
+        urls: {
+            web: "https://blissful-beaver-9fdd72.netlify.app",
+            code: "https://github.com/ManelGonzalez-ops/Chatta_frontend",
+        }
     },
     {
-        title: "Node & React Ecommercdfdfe",
-        text: "Modern Full Stack app which contains the main functonality needed by modern ecommerce such as clear and interactive interface, powered with a flexible purchase process that optimize sells",
+        title: "Chatta, the anonimous chat",
+
+        text: "A simple real time chat app built with React, Node and Mysql. The objective of this project was to learn how to use websockets and their capabilities for future side-projects",
         tech: [
             { name: "React", component: SvgReact },
             { name: "Node", component: Node },
@@ -37,28 +46,37 @@ const data = [
             { name: "Mysql", component: Mysql },
 
         ],
-        img: NodeEcommerce
+        img: chatta
+        ,
+        urls: {
+            web: "https://app.netlify.com/sites/blissful-beaver-9fdd72/overview",
+            code: "https://github.com/ManelGonzalez-ops/Chatta_frontend",
+        }
     }
     ,
     {
-        title: "Node & React Ecommercdfdfe",
-        text: "Modern Full Stack app which contains the main functonality needed by modern ecommerce such as clear and interactive interface, powered with a flexible purchase process that optimize sells",
+        title: "Python Ecommerce",
+        text: "This is a server side rendered Python web application. Some of their fetures: uthentification, Authorization, payment, order tracking and database Validation",
         tech: [
             { name: "Django", component: Django },
             { name: "Postgres", component: Postgres },
             { name: "Javascript", component: Javascript },
 
         ],
-        img: NodeEcommerce
+        img: PythonEcommerce,
+        urls: {
+            web: "https://app.netlify.com/sites/blissful-beaver-9fdd72",
+            code: "https://github.com/ManelGonzalez-ops/Chatta_frontend",
+        }
     }
 ]
 
 
 
-const MainPart =()=> {
+const MainPart = () => {
 
     const renders = useRef(0)
-    
+
     return (
         <div className="upper-positionator">
             <h1>Contador: {renders.current++}</h1>

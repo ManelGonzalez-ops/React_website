@@ -3,27 +3,38 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // import Project from "./project";
 import Project from "./projectVgsap";
 import { Context } from "../Context";
-import SuspenseHOC from "./videos/suspenseHOC";
+
 import MainPart from "./MainPart"
+import SeeMoreButton from "./SeeMoreBtn"
 
 
 export default function App() {
   let context = useContext(Context)
   const tituloT = useRef(null)
-
   const [seeMore, setSeeMore] = useState(false)
+  const firstTime = useRef(true)
+
+  const updateRef=()=>{
+    firstTime.current = false
+  }
+
 
 
   useLayoutEffect(() => {
     if ('IntersectionObserver' in window) {
+
       const observerT = new IntersectionObserver(item => {
         if (item[0].isIntersecting)
           item[0].target.classList.add("visibleB")
       }, { threshold: 0.5 })
-
+      
       observerT.observe(tituloT.current)
+
+
     }
-  }, [])
+  }, [tituloT])
+
+
 
 
   return (
@@ -35,13 +46,12 @@ export default function App() {
         </div>
         <MainPart />
         <div className="seemore-container">
-          <button onClick={() => { 
-            setSeeMore(prev => !prev)}}>Show more work</button>
+          <SeeMoreButton seeMore={seeMore} toggleSeeMore={setSeeMore} setNotFirstTime={updateRef} isFirstTime={firstTime.current}/>
         </div>
         <div className="contenedor-project">
-            
-        {seeMore && <Project />}
-        
+
+          {seeMore && <Project />}
+
         </div>
 
       </div>

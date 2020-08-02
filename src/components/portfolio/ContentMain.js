@@ -12,7 +12,7 @@ export default function ContentMain({ info }) {
     const text = useRef(null)
     const tech = useRef(null)
     const imagen = useRef(null)
-   
+
 
     const count = useRef(0.5)
 
@@ -67,12 +67,14 @@ export default function ContentMain({ info }) {
                     />
                     <div className={isMasked ? "layer visible" : "layer"}></div>
                     <div className="inner-btn-section">
-                        <button className={isMasked ? "visible" : ""}>
+
+                        <a target="_blanck" href={info.item.urls.web} className={isMasked ? "visible" : ""}>
                             <FaEye className="icon" />
-                        </button>
-                        <button className={isMasked ? "visible" : ""}>
+                        </a>
+
+                        <a target="_blanck" href={info.item.urls.code} className={isMasked ? "visible" : ""}>
                             <BsCodeSlash className="icon" />
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -82,12 +84,12 @@ export default function ContentMain({ info }) {
 
                 {viewWidth > 800 && <h2 className="reveal" ref={title}>{info.item.title}</h2>}
                 <div ref={tech} className="tech-container reveal">
-                <h5 className="titulo-tech">Built with:</h5>
-                <ul className="tech " >{info.item.tech.map((tec, index) =>
-                    <li key={index}>
-                        <span><strong>{tec.name}</strong></span>
-                        <tec.component /></li>
-                )}</ul>
+                    <h5 className="titulo-tech">Built with:</h5>
+                    <ul className="tech " >{info.item.tech.map((tec, index) =>
+                        <li key={index}>
+                            <span><strong>{tec.name}</strong></span>
+                            <tec.component /></li>
+                    )}</ul>
                 </div>
                 <p className="descripcion reveal" ref={text}>{info.item.text}</p>
 

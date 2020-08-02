@@ -106,4 +106,10 @@ color: var(--bg);
   text-align: center;
   margin: 0 auto;
   margin-bottom: 1.7em;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.contact-btnN:hover{
+  background-color: rgb(204 86 97);
 }
