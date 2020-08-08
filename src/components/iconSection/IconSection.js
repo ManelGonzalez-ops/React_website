@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./iconSection.css"
 import styled from "styled-components"
 

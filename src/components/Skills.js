@@ -6,22 +6,7 @@ import Skill from "./SkillUnit"
 export default function Skills() {
 
     let context = useContext(Context)
-    const sass = useRef(null)
-    const reactt = useRef(null)
-    const html = useRef(null)
-    const css = useRef(null)
-    const mysql = useRef(null)
-    const node = useRef(null)
-    const figma = useRef(null)
-    const javascript = useRef(null)
-    const python = useRef(null)
-    const git = useRef(null)
-    const django = useRef(null)
-    const express = useRef(null)
-    const redux = useRef(null)
-    const mongo = useRef(null)
-    const webpack = useRef(null)
-    const svgArr = [sass, reactt, html, javascript, webpack, css, git, figma, python, node, mysql, django, express, redux, mongo]
+   
 
     const title = useRef(null)
 
@@ -116,115 +101,7 @@ export default function Skills() {
             <div className="skill-container">
 
                 {data.map((item, index)=><Skill key={index} info={item}/>)}
-                {/* <div className="skill-unit sass" ref={sass}>
-                    <span >
-                        <SvgSass />
-                    </span>
-                    <div className="wrap-skill">
-
-                        <p>Sass / Scss</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={reactt}>
-                    <span >
-                        <SvgReact />
-                    </span>
-                    <div className="wrap-skill">
-
-                        <p>React.js</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={javascript}>
-
-                    <SvgJavascript />
-                    <div className="wrap-skill">
-
-                        <p>Javascript</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={webpack}>
-                    <Webpack />
-                    <div className="wrap-skill">
-                        <p>Webpack</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={css}>
-                    <SvgCss />
-                    <div className="wrap-skill" >
-                        <p>CSS</p>
-                    </div>
-                </div>
-                <div className="skill-unit htmlL" ref={html}>
-
-                    <SvgHtml />
-                    <div className="wrap-skill" >
-
-                        <p>Html</p>
-                    </div>
-                </div>
-                <div className="skill-unit git" ref={git}>
-                    <SvgGit />
-                    <div className="wrap-skill" >
-                        <p>GIT</p>
-
-                    </div>
-                </div>
-                <div className="skill-unit" ref={node}>
-
-                    <SvgNode />
-                    <div className="wrap-skill" >
-
-                        <p>Node.js</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={mysql}>
-
-                    <SvgMysql />
-                    <div className="wrap-skill" >
-                        <p>MySql</p>
-
-                    </div>
-                </div>
-                <div className="skill-unit figma" ref={figma}>
-
-                    <Kuku />
-                    <div className="wrap-skill">
-
-                        <p>Figma</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={express}>
-
-                    <Express />
-                    <div className="wrap-skill">
-                        <p>Express.js</p>
-
-                    </div>
-                </div>
-                <div className="skill-unit" ref={python}>
-                    <SvgPython />
-                    <div className="wrap-skill" >
-                        <p>Python</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={django}>
-                    <Django />
-                    <div className="wrap-skill" >
-                        <p>Django</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={redux}>
-                    <Reduxx />
-                    <div className="wrap-skill" >
-                        <p>Redux</p>
-                    </div>
-                </div>
-                <div className="skill-unit" ref={mongo}>
-                    <Mongo />
-                    <div className="wrap-skill" >
-                        <p>MongoDb</p>
-                    </div>
-                </div> */}
+                
             </div>
         </Fragment>
     )

@@ -1,8 +1,4 @@
-import React, { useState, useEffect, useRef, Fragment, useContext } from "react";
-import { Link } from "react-router-dom"
-
-
-import SuspenseHOC from "./videos/suspenseHOC"
+import React, { Fragment } from "react";
 import proyectos from "./projectImports"
 
 import ComponerContainer from "./videos/ComponerContainer"

@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 :root {
   --body-color: #191973;
-  --comp-color: #CE0000;
-  --sim-light: #5A79A5;
-  --sim-lighter: #9CAAC6;
-  --lightest: #DEE7EF;
+  --comp-color: #ce0000;
+  --sim-light: #5a79a5;
+  --sim-lighter: #9caac6;
+  --lightest: #dee7ef;
 }
 
 header {
@@ -131,6 +131,11 @@ header nav {
   color: #3a86ffff;
 }
 
+.list-movil li .hiperoverlay {
+  z-index: 1;
+  color: red;
+}
+
 @media (min-width: 680px) {
   header {
     justify-content: space-around;
@@ -182,11 +187,13 @@ header nav {
     background: linear-gradient(rgba(10, 0, 50, 0.4), rgba(10, 0, 50, 0.4)) repeat-x;
     top: -4px;
     left: -8px;
-    z-index: -1;
     border-radius: 30px;
   }
   header .listaNav li:hover:after {
     transform: scaleX(1);
+  }
+  header .listaNav li .hiperoverlay {
+    z-index: 1;
   }
 }
 
@@ -273,7 +280,6 @@ header.navClosed {
   opacity: 1;
   padding: 2em;
   padding-left: 12em;
-  top: 15vh;
   margin-bottom: 15em;
   min-height: 100vh;
   padding-top: 6em;
@@ -611,23 +617,23 @@ header.navClosed {
   cursor: pointer;
 }
 
-.content .text__block .btn-group button:first-of-type {
+.content .text__block .btn-group button.first {
   margin-left: -1.5rem;
   color: white;
 }
 
-.content .text__block .btn-group button:first-of-type:hover {
+.content .text__block .btn-group button.first:hover {
   background-color: white;
   color: #3503ab;
 }
 
-.content .text__block .btn-group button:last-of-type {
+.content .text__block .btn-group button.last {
   margin-left: 1.5rem;
   background-color: white;
   color: #3503ab;
 }
 
-.content .text__block .btn-group button:last-of-type:hover {
+.content .text__block .btn-group button.last:hover {
   background-color: #3503ab;
   color: white;
 }
@@ -794,7 +800,7 @@ header.navClosed {
 
 .seemore {
   padding: 0.8rem 2rem;
-  background-color: red;
+  background-color: #ff734a;
   color: white;
   border: 0;
   outline: 0;
@@ -807,7 +813,7 @@ header.navClosed {
 }
 
 .seemore:hover {
-  background-color: #990000;
+  background-color: #e33300;
 }
 
 .seemore.hide {
@@ -940,7 +946,7 @@ header.navClosed {
   font-weight: 400;
   background: white;
   display: block;
-  left: -2.75rem;
+  left: -2.63rem;
   top: 25%;
 }
 
@@ -1201,7 +1207,7 @@ header.navClosed {
   display: block;
   font-weight: bold;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   transform: translate3d(10px, 220%, 0px);
   position: relative;
   z-index: 1;
@@ -1213,22 +1219,8 @@ header.navClosed {
   margin-top: 1.5em;
 }
 
-input[type=text] {
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: .2em;
-  border: 1px solid #ACACAC;
-  color: #1B1820;
-  padding-left: 1em;
-  height: 45px;
-}
-
-input[type=text]:focus {
-  outline: 0;
-}
-
 .container__form .error-field {
-  border: 3px solid #FFB3B3;
+  border: 3px solid #ffb3b3;
 }
 
 .container__form {
@@ -1249,7 +1241,7 @@ input[type=text]:focus {
   margin: 0;
   padding: 1em;
   outline: 0;
-  border: 1px solid #ACACAC;
+  border: 1px solid #acacac;
 }
 
 .container__form textarea:focus {
@@ -1265,12 +1257,12 @@ input[type=text]:focus {
 }
 
 .error {
-  background: #FFB3B3;
+  background: #ffb3b3;
   display: inline-block;
-  padding: .3em .5em;
-  font-size: .85em;
+  padding: 0.3em 0.5em;
+  font-size: 0.85em;
   font-weight: bold;
-  margin-top: -.1em;
+  margin-top: -0.1em;
   display: none;
 }
 
@@ -1292,7 +1284,7 @@ input[type=text]:focus {
   box-sizing: border-box;
   font-weight: bold;
   font-size: 1.2em;
-  border-radius: .2em;
+  border-radius: 0.2em;
   cursor: pointer;
   transition: all 0.1s ease;
 }
@@ -1341,9 +1333,6 @@ input[type=text]:focus {
 }
 
 @media (min-width: 500px) {
-  .input[type=text] {
-    height: 35px;
-  }
   .container__form .cta {
     width: 30%;
   }
@@ -1365,6 +1354,57 @@ input[type=text]:focus {
   }
   .container__form .cta {
     width: auto;
+  }
+}
+
+.form-box {
+  padding: 1.5rem;
+}
+
+.wrap-input {
+  margin: 1.9rem auto;
+}
+
+.wrap-input:first-of-type {
+  margin-top: 0.4rem;
+}
+
+.text-input {
+  width: 100%;
+}
+
+.text-input input {
+  padding: 16px 13.5px;
+}
+
+.tabb {
+  background-color: blue;
+  width: 100%;
+}
+
+.header-form {
+  padding: 1rem;
+  color: white;
+  background-color: #6202ee;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: 0;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.marginer {
+  margin: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 500px) {
+  .marginer {
+    margin: 0.75rem;
+  }
+  .form-box {
+    padding: 1rem;
   }
 }
 

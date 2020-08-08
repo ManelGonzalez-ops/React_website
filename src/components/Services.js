@@ -41,19 +41,19 @@ return ()=>{
         <div className="cont-services">
             <div className="cartaSkill" ref={carta1}>
                 <IoIosSpeedometer className="iconCard" />
-                <h3>Rendimiento</h3>
-                <p>Aseguro tiempos de carga mínimos haciendo que los usuarios puedan acceder mediante cualquier dispositivo, sin tener que esperar y puedan centrarse en lo importante. </p>
+                <h3>Performance</h3>
+                <p>I use a set of modern technologies to build fast and performance web applications</p>
             </div>
             <div className="cartaSkill" ref={carta2}>
                 <AiFillMobile className="iconCard" />
                 <h3>Responsive Design First</h3>
-                <p>Lidio con la complejidad propia de aplicaciones que requieren ser ricas en interacciones, maquetación de interfaces complejas, e implementar funcionalidad como servicio </p>
+                <p>A good web appication is a system where data, logic and ui components are interrelated. requires complex relationship between components and data.  where data flows through components which can require similar logic or not.</p>
             </div>
             <div className="cartaSkill" ref={carta3}>
                 <MdAccessibility className="iconCard" />
                 <h3>Accesibilidad</h3>
-                <p>hago webs siguiendo las practicas establecidas por la W3C,
-                    evitando la penalización de los motores de busqueda y asegurandole al usuario una experiencia agradable y justa.</p>
+                <p>
+                    Good functionality and and amazing experience doesn't mean give up a nice Ui. Controling component data better gives a more flexibility i a way to make ui components react to any change you want.</p>
             </div>
         </div>
         </div>

@@ -1,7 +1,8 @@
-import React, { useRef, useEffect, Fragment, useState, useContext } from 'react'
+import React, { useRef, useEffect, useState, useContext } from 'react'
 import { BsCodeSlash } from "react-icons/bs"
 import { FaEye } from "react-icons/fa"
 import { Context } from "../Context"
+
 
 export default function ContentMain({ info }) {
 
@@ -94,8 +95,13 @@ export default function ContentMain({ info }) {
                 <p className="descripcion reveal" ref={text}>{info.item.text}</p>
 
                 <div className="btn-group">
-                    <button>Visit</button>
-                    <button>Source Code</button>
+                    <a href={info.item.urls.web} target="_blank" rel="noopener noreferrer">
+                        <button className="first" target="_blank" rel="noopener noreferrer">Visit</button>
+                    </a>
+                    <a href={info.item.urls.code} target="_blank" rel="noopener noreferrer">
+                        <button
+                            className="last">Source Code</button>
+                    </a>
                 </div>
 
             </div>

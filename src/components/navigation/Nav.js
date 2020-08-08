@@ -71,9 +71,9 @@ export default class Nav extends React.Component {
             });
         }
         else{
-            if(this.navRef.style.position !== "absolute"){
+            if(this.navRef.style.position !== "static"){
                 this.navRef.style.paddingTop = "3vh"
-                this.navRef.style.position = "absolute"
+                this.navRef.style.position = "static"
                 this.navRef.style.background = "none"
                 document.querySelector("#yosvg").childNodes.forEach(path=>{
                     path.style.fill = "#3503AB"
@@ -140,7 +140,7 @@ export default class Nav extends React.Component {
                     {/* <a className="nameN" href="#">Manel González <span>Escrig</span></a> */}
                     <nav>
                         <ul className="listaNav" >
-                            <li onClick={() => this.switchState("portfolio")}>Portfolio</li>
+                            <li onClick={() => this.switchState("portfolio")}><span className="hiperoverlay">Portfolio</span></li>
                             <li onClick={() => this.switchState("skills")}><span className="hiperoverlay">Skills</span></li>
                             <li onClick={() => this.switchState("sobremi")}><span className="hiperoverlay">Sobre mi</span></li>
                             <li onClick={() => this.switchState("contacto")}><span className="hiperoverlay">Contacto</span></li>

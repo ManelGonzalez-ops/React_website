@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, Fragment } from 'react'
+import React from 'react'
 
 import ContentMain from "./ContentMain"
 import { SvgReact, Node, Redux, Mongo, Postgres, Django, Mysql, Socket, Javascript } from "./svgs"
@@ -31,9 +31,10 @@ const data = [
         img: NodeEcommerce
         ,
         urls: {
-            web: "https://blissful-beaver-9fdd72.netlify.app",
-            code: "https://github.com/ManelGonzalez-ops/Chatta_frontend",
+            web: "https://distracted-borg-05149b.netlify.app",
+            code: "https://github.com/ManelGonzalez-ops/mern-ecommerce",
         }
+        
     },
     {
         title: "Chatta, the anonimous chat",
@@ -49,10 +50,11 @@ const data = [
         img: chatta
         ,
         urls: {
-            web: "https://app.netlify.com/sites/blissful-beaver-9fdd72/overview",
+            web: "https://elegant-leakey-b744fc.netlify.app",
             code: "https://github.com/ManelGonzalez-ops/Chatta_frontend",
         }
     }
+
     ,
     {
         title: "Python Ecommerce",
@@ -65,8 +67,8 @@ const data = [
         ],
         img: PythonEcommerce,
         urls: {
-            web: "https://app.netlify.com/sites/blissful-beaver-9fdd72",
-            code: "https://github.com/ManelGonzalez-ops/Chatta_frontend",
+            web: "https://manel-pythonecommerce.herokuapp.com/",
+            code: "https://github.com/ManelGonzalez-ops/Python-Ecommerce",
         }
     }
 ]
@@ -75,11 +77,9 @@ const data = [
 
 const MainPart = () => {
 
-    const renders = useRef(0)
 
     return (
         <div className="upper-positionator">
-            <h1>Contador: {renders.current++}</h1>
             {data.map((item, index) => {
                 let val = index === data.length - 1 ? 0.2 : 0.5;
                 return (<ContentMain key={index} info={{ item, index, threshold: val }} />)

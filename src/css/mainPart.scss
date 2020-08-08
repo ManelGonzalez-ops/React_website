@@ -64,7 +64,7 @@
             justify-content: center;
 
             order: 3;
-
+           
             button {
                 background: rgb(53, 3, 171);
                 outline: none;
@@ -74,7 +74,7 @@
                 transition: all 0.2s ease;
                 cursor: pointer;
 
-                &:first-of-type {
+                &.first {
                     margin-left: -1.5rem;
                     color: white;
 
@@ -83,7 +83,7 @@
                         color: rgb(53, 3, 171);
                     }
                 }
-                &:last-of-type {
+                &.last {
                     margin-left: 1.5rem;
                     background-color: white;
                     color: rgb(53, 3, 171);
@@ -280,7 +280,7 @@ $button-show: red;
 .seemore{
 
     padding: 0.8rem 2rem;
-    background-color: red;
+    background-color: #ff734a;
     color: white;
     border: 0;
     outline: 0;
@@ -293,7 +293,7 @@ $button-show: red;
     
 
     &:hover{
-        background-color: darken($color: red, $amount: 20%);
+        background-color: darken($color: #ff734a, $amount: 20%);
     }
 
     &.hide{

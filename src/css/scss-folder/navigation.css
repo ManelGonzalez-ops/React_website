@@ -1,9 +1,9 @@
 :root {
   --body-color: #191973;
-  --comp-color: #CE0000;
-  --sim-light: #5A79A5;
-  --sim-lighter: #9CAAC6;
-  --lightest: #DEE7EF;
+  --comp-color: #ce0000;
+  --sim-light: #5a79a5;
+  --sim-lighter: #9caac6;
+  --lightest: #dee7ef;
 }
 
 header {
@@ -130,6 +130,11 @@ header nav {
   color: #3a86ffff;
 }
 
+.list-movil li .hiperoverlay {
+  z-index: 1;
+  color: red;
+}
+
 @media (min-width: 680px) {
   header {
     justify-content: space-around;
@@ -181,11 +186,13 @@ header nav {
     background: linear-gradient(rgba(10, 0, 50, 0.4), rgba(10, 0, 50, 0.4)) repeat-x;
     top: -4px;
     left: -8px;
-    z-index: -1;
     border-radius: 30px;
   }
   header .listaNav li:hover:after {
     transform: scaleX(1);
+  }
+  header .listaNav li .hiperoverlay {
+    z-index: 1;
   }
 }
 

@@ -73,23 +73,23 @@
   cursor: pointer;
 }
 
-.content .text__block .btn-group button:first-of-type {
+.content .text__block .btn-group button.first {
   margin-left: -1.5rem;
   color: white;
 }
 
-.content .text__block .btn-group button:first-of-type:hover {
+.content .text__block .btn-group button.first:hover {
   background-color: white;
   color: #3503ab;
 }
 
-.content .text__block .btn-group button:last-of-type {
+.content .text__block .btn-group button.last {
   margin-left: 1.5rem;
   background-color: white;
   color: #3503ab;
 }
 
-.content .text__block .btn-group button:last-of-type:hover {
+.content .text__block .btn-group button.last:hover {
   background-color: #3503ab;
   color: white;
 }
@@ -256,7 +256,7 @@
 
 .seemore {
   padding: 0.8rem 2rem;
-  background-color: red;
+  background-color: #ff734a;
   color: white;
   border: 0;
   outline: 0;
@@ -269,7 +269,7 @@
 }
 
 .seemore:hover {
-  background-color: #990000;
+  background-color: #e33300;
 }
 
 .seemore.hide {

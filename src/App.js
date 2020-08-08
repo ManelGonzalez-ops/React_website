@@ -1,12 +1,11 @@
-import React, { useLayoutEffect, useState, useContext, useRef, useEffect } from 'react';
+import React, { useLayoutEffect, useContext, useRef} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './css/main.css';
 import './css/portfolio.css'; //dentro de src
 import Nav from "./components/navigation/Nav"
 import Hero from "./components/Hero"
 import Services from "./components/Services"
-import Studies from "./components/Studies"
-import Form from "./components/Form"
+// import Studies from "./components/Studies"
 
 import Portfolio from "./components/portfolio/Portfolio"
 import Expenses from "./components/portfolio/projectList/reactExpenses/Expenses"
@@ -25,13 +24,12 @@ import imagenHq from "./images/IMG-20190806-WA0018.jpg"
 import imagenLq from "./images/lowqimg.jpg"
 import ImagenPnp from "./images/ImagenPnp"
 
-
+import FormFormik from "./components/FormFormik"
 
 // const Yo = React.lazy(() => import("./images/manelPhoto.js"))
-function App(props) {
+function App() {
 
   const appRef = useRef(null)
-  const renderer = useRef(0)
   const contactoContainer = useRef(null)
   let context = useContext(Context)
 
@@ -119,15 +117,14 @@ function App(props) {
             </div>
 
             <Services />
-            <h1>times rendered: {renderer.current++}</h1>
             <Portfolio />
 
             <Skills />
 
-            <Studies />
+           
 
             <div className="responsive-container" ref={contactoContainer}>
-              <Form />
+              <FormFormik />
               <IconSection
                 movileDisplay={(context.viewWidth || window.innerWidth) > 900 ? "block" : "none"} innerWidth={context.viewWidth} />
             </div>
