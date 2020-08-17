@@ -1,24 +1,29 @@
 .container-services {
   box-sizing: border-box;
-  background-color: #1D1C34;
   margin-bottom: 3rem;
-  padding-top: 4em;
-  padding-bottom: 4em;
 }
 
 .container-services .cont-services {
   padding: calc(1rem + 1%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-services .cont-services .cartaSkill {
   margin: 2em auto;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), transform 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), box-shadow 0.5s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  width: 300px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-align: center;
 }
 
 .container-services .cont-services .cartaSkill:hover {
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09), 0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09), 0 32px 16px rgba(0, 0, 0, 0.09);
+  border: 2px solid #1d1c34;
+  border-radius: 8px;
 }
 
 .container-services .cont-services .cartaSkill.visibleC {
@@ -32,7 +37,7 @@
 }
 
 .container-services .cont-services .cartaSkill h3 {
-  color: white;
+  color: #1d1c34;
   font-size: 1.5rem;
   margin: 1em 0;
 }
@@ -41,7 +46,7 @@
   opacity: 0.8;
   margin-bottom: 0;
   line-height: 1.5em;
-  color: white;
+  color: #1d1c34;
 }
 
 .hola {
@@ -51,18 +56,31 @@
 @media (min-width: 1000px) {
   .container-services .cont-services {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     padding: 2em;
   }
   .container-services .cont-services .cartaSkill {
-    text-align: left;
     height: auto;
     padding: 1.7em;
     top: 0px;
     margin: 0px;
   }
+  .container-services .cont-services .cartaSkill:first-child {
+    margin: auto 30%;
+  }
+  .container-services .cont-services .cartaSkill.item2 {
+    margin-right: 2rem;
+  }
+  .container-services .cont-services .cartaSkill.item3 {
+    margin-left: 2rem;
+  }
   .container-services .cont-services .cartaSkill .iconCard {
     font-size: 2em;
+  }
+}
+
+@media (max-width: 500px) {
+  .cartaSkill {
+    width: 100%;
   }
 }

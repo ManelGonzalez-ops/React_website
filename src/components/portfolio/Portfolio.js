@@ -26,12 +26,11 @@ export default function App() {
       const observerT = new IntersectionObserver(item => {
         if (item[0].isIntersecting)
           item[0].target.classList.add("visibleB")
-      }, { threshold: 0.5 })
+      }, { threshold: 0.2 })
       
       observerT.observe(tituloT.current)
-
-
     }
+
   }, [tituloT])
 
 

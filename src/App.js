@@ -104,13 +104,15 @@ function App() {
         </Switch>
         <Switch>
           <Route path="/" exact>
+
+          <Nav contextu={navegar} bodyRef={appRef} /> 
             <div className="thefondo">
 
               <ImagenPnp
                 lq={imagenLq}
                 hq={imagenHq}
               />
-             <Nav contextu={navegar} bodyRef={appRef} /> 
+            
 
               <Hero hasLoaded={context && context.hasbeenLoaded} contextu={navegar} />
 

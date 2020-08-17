@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect, useRef } from "react";
+import { Button } from "@material-ui/core";
 
 
 
 
 
-function Hero({hasLoaded, contextu}) {
+function Hero({ hasLoaded, contextu }) {
 
   const hero = useRef(null)
   const tituloHero = useRef(null)
@@ -12,32 +13,32 @@ function Hero({hasLoaded, contextu}) {
   const nombreH = useRef(null)
   const overflowWrap = useRef(null)
 
-  
 
-  useEffect(()=>{
-tituloHero.current.classList.add("fuera")
+
+  useEffect(() => {
+    tituloHero.current.classList.add("fuera")
   }, [])
   return (
     <Fragment>
 
 
       <div className="hero" ref={hero}>
-      
-     
-        
+
+
+
         <p>Hi, I'm Manel</p>
         <h1 className="titulo-nombre" ref={nombreH}></h1>
 
         <div className="wrap-titleH" ref={overflowWrap}>
           <h1 ref={tituloHero} className="titulo-nameB">
-           I turn any design into code
+            I turn any design into code
         </h1>
         </div>
-        
-        <button className="btn-principal" ref={btnPnp} onClick={()=>{contextu("portfolio")}}>My work</button>
+
+        <Button variant="contained" style={{background: "#150144", color: "white"}} size="large" ref={btnPnp} onClick={() => { contextu("portfolio") }}>My work</Button>
 
       </div>
-      
+
     </Fragment>
   );
 }

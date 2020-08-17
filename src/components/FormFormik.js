@@ -19,7 +19,7 @@ export default function Form() {
             error={!!errorText}
             variant="outlined"
             className="text-input"
-            autoComplete={false}
+            autoComplete="off"
         />)
     }
 

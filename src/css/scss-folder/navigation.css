@@ -8,13 +8,13 @@
 
 header {
   height: 15vh;
-  position: relative;
+  position: absolute;
   z-index: 10;
   display: flex;
   width: 100%;
   margin: 0;
   align-items: center;
-  top: 0;
+  top: 5vh;
   overflow-x: hidden;
 }
 
@@ -44,11 +44,10 @@ header .nameN {
 }
 
 header #burger {
-  position: absolute;
-  right: 9%;
-  top: 50%;
-  width: 32px;
+  font-size: 53px;
   cursor: pointer;
+  transform: translateY(5px);
+  color: white;
 }
 
 @keyframes fadeNavClose {
@@ -71,6 +70,11 @@ header .listaNav li {
 
 header nav {
   flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .exit-btn {
@@ -139,7 +143,6 @@ header nav {
   header {
     justify-content: space-around;
     padding-right: 2em;
-    padding-top: 3vh;
   }
   header #burger {
     display: none;
@@ -157,6 +160,7 @@ header nav {
     align-items: center;
     top: 5px;
     left: -8rem;
+    width: 100%;
   }
   header .listaNav li {
     display: flex;
@@ -197,9 +201,6 @@ header nav {
 }
 
 @media (max-width: 950px) {
-  header svg {
-    margin-left: 4rem;
-  }
   header .listaNav {
     left: -3rem;
   }
@@ -269,4 +270,8 @@ header {
 
 header.navClosed {
   transform: translateY(-200px);
+}
+
+#flex-itemm {
+  margin-left: auto;
 }

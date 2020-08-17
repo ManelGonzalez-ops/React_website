@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react'
-
+import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 
 export default class Nav extends React.Component {
+
+
 
     constructor(props) {
         super(props)
@@ -13,23 +15,23 @@ export default class Nav extends React.Component {
         }
         this.navRef = null
         this.handleScroll = this.handleScroll.bind(this)
-        
+
     }
 
     componentDidMount() {
         setTimeout(() => {
             window.addEventListener("scroll", this.handleScroll);
         }, 2000)
-        
-        setTimeout(()=>{
-            if(document.querySelector(".listaNav")){
-                document.querySelector(".listaNav").childNodes.forEach(link=>{
+
+        setTimeout(() => {
+            if (document.querySelector(".listaNav")) {
+                document.querySelector(".listaNav").childNodes.forEach(link => {
                     link.style.opacity = 1
                 })
             }
-            
+
         }, 400)
-        
+
 
     }
 
@@ -38,56 +40,55 @@ export default class Nav extends React.Component {
     }
 
     handleScroll() {
-        
-        if(this.navRef){
-        if (document.body.getBoundingClientRect().top <= -600) {
-            
-            if(this.navRef.style.position !== "fixed"){
-                this.navRef.style.top = "0vh"
-                this.navRef.style.paddingTop = "0vh"
-                this.navRef.style.position = "fixed"
-                this.navRef.style.visibility = "hidden"
-                this.navRef.style.background = "#3503AB"
-                
-                document.querySelector("#yosvg").childNodes.forEach(path=>{
-                    path.style.fill = "#fff"
-                })
-                document.querySelector(".listaNav").childNodes.forEach(li=>{
-                    li.classList.add("pseudo-fuera")
-                    
-                })
-                //no nos queda otra que esconder el nav la decima de segundo que cambia a pisicoje
-                setTimeout(()=>{
-                    this.navRef.style.visibility = "visible"
-                }, 300)
+
+        if (this.navRef) {
+            if (document.body.getBoundingClientRect().top <= -600) {
+
+                if (this.navRef.style.position !== "fixed") {
+                    this.navRef.style.top = "0vh"
+                    this.navRef.style.position = "fixed"
+                    this.navRef.style.visibility = "hidden"
+                    this.navRef.style.background = "#3503AB"
+
+                    document.querySelector("#yosvg").childNodes.forEach(path => {
+                        path.style.fill = "#fff"
+                    })
+                    document.querySelector(".listaNav").childNodes.forEach(li => {
+                        li.classList.add("pseudo-fuera")
+
+                    })
+                    //no nos queda otra que esconder el nav la decima de segundo que cambia a pisicoje
+                    setTimeout(() => {
+                        this.navRef.style.visibility = "visible"
+                    }, 300)
+                }
+                const { scrollPos } = this.state;
+                this.setState({
+                    show: document.body.getBoundingClientRect().top > scrollPos,
+                    scrollPos: document.body.getBoundingClientRect().top,
+
+                }, () => {
+
+                });
             }
-            const { scrollPos } = this.state;
-            this.setState({
-                show: document.body.getBoundingClientRect().top > scrollPos,
-                scrollPos: document.body.getBoundingClientRect().top,
-                
-            }, ()=>{
-                
-            });
-        }
-        else{
-            if(this.navRef.style.position !== "static"){
-                this.navRef.style.paddingTop = "3vh"
-                this.navRef.style.position = "static"
-                this.navRef.style.background = "none"
-                document.querySelector("#yosvg").childNodes.forEach(path=>{
-                    path.style.fill = "#3503AB"
-                })
-                document.querySelector(".listaNav").childNodes.forEach(li=>{
-                    
-                    li.className = ""
-                 
-                })
+            else {
+                if (this.navRef.style.position !== "absolute") {
+                    this.navRef.style.position = "absolute"
+                    this.navRef.style.top = "5vh"
+                    this.navRef.style.background = "none"
+                    document.querySelector("#yosvg").childNodes.forEach(path => {
+                        path.style.fill = "#3503AB"
+                    })
+                    document.querySelector(".listaNav").childNodes.forEach(li => {
+
+                        li.className = ""
+
+                    })
+                }
+
             }
-            
         }
     }
-}
 
 
     changeNav = () => {
@@ -122,10 +123,11 @@ export default class Nav extends React.Component {
             this.state.navOpen ?
                 <ul className="list-movil">
                     <li onClick={() => this.switchState("home")}>Home</li>
-                    <li onClick={() => this.switchState("portfolio")}>Portfolio</li>
-                    <li onClick={() => this.switchState("skills")}>Skills</li>
                     <li onClick={() => this.switchState("sobremi")}>Sobre mi
                     </li>
+                    <li onClick={() => this.switchState("portfolio")}>Portfolio</li>
+                    <li onClick={() => this.switchState("skills")}>Skills</li>
+
                     <li onClick={() => this.switchState("contacto")}>Contacto</li>
                 </ul>
                 :
@@ -135,18 +137,19 @@ export default class Nav extends React.Component {
             <Fragment>
                 <MaskNav />
 
-                <header className={this.state.show ? "" : "navClosed"} ref={ref=>this.navRef = ref}>
+                <header className={this.state.show ? "" : "navClosed"} ref={ref => this.navRef = ref}>
                     <h1 onClick={() => this.switchState("home")}><YoSvg /></h1>
                     {/* <a className="nameN" href="#">Manel González <span>Escrig</span></a> */}
                     <nav>
                         <ul className="listaNav" >
+                            <li onClick={() => this.switchState("sobremi")}><span className="hiperoverlay">Sobre mi</span></li>
                             <li onClick={() => this.switchState("portfolio")}><span className="hiperoverlay">Portfolio</span></li>
                             <li onClick={() => this.switchState("skills")}><span className="hiperoverlay">Skills</span></li>
-                            <li onClick={() => this.switchState("sobremi")}><span className="hiperoverlay">Sobre mi</span></li>
+
                             <li onClick={() => this.switchState("contacto")}><span className="hiperoverlay">Contacto</span></li>
                         </ul>
 
-                        <span onClick={this.changeNav}><Hamburguer /></span>
+                        <span onClick={this.changeNav} id="flex-itemm"><MenuSharpIcon id="burger" /></span>
 
                     </nav>
 
@@ -160,11 +163,11 @@ export default class Nav extends React.Component {
 
 
 const Hamburguer = () => (
-    <svg width="37" height="25" id="burger" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 3H37" stroke="white" strokeWidth="5"/>
-<path d="M0 29H37" stroke="white" strokeWidth="5"/>
-<path d="M0 16H37" stroke="white" strokeWidth="5"/>
-</svg>
+    <svg width="37" height="45" id="burger" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 3H37" stroke="red" strokeWidth="5" />
+        <path d="M0 29H37" stroke="white" strokeWidth="5" />
+        <path d="M0 16H37" stroke="white" strokeWidth="5" />
+    </svg>
 
 
 )

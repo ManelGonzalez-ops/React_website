@@ -6,9 +6,8 @@
   opacity: 1;
   padding: 2em;
   padding-left: 12em;
-  margin-bottom: 15em;
   min-height: 100vh;
-  padding-top: 6em;
+  margin-top: 25vh;
 }
 
 .hero p {
@@ -78,23 +77,16 @@
 }
 
 .hero .btn-principal {
-  padding: 0.6em 1.5em;
-  text-decoration: none;
-  font-size: 1.15em;
-  box-sizing: border-box;
-  font-weight: bold;
-  color: white;
-  outline: 0;
-  opacity: 1;
   transform: translateY(50px);
   background-color: #1d1c34;
-  transition: color 0.5s ease, background 0.5s ease;
+  border: 1px solid transparent;
+  color: white;
   margin-left: 3px;
-  border: 3px solid #1d1c34;
   cursor: pointer;
 }
 
 .hero .btn-principal:hover {
+  border: 1px solid #1d1c34;
   color: #1d1c34;
   background-color: white;
 }
@@ -119,6 +111,7 @@
     margin-left: 0 !important;
     padding: 0.5em;
     font-size: 0.7em;
+    margin-top: 12vh;
   }
   .hero .wrap-titleH {
     overflow: hidden;
@@ -175,6 +168,7 @@
 @media (max-width: 800px) {
   .hero {
     padding-left: 2rem;
+    margin-top: 20vh;
   }
   .hero .btn-principal {
     margin-top: -2rem;
@@ -186,6 +180,7 @@
     margin-left: 0em;
     font-size: 0.95em;
     padding-left: 1rem;
+    margin-top: 15vh;
   }
   .hero .profile-photo {
     width: 100px;

@@ -96,12 +96,12 @@ svg:not(:root) {
 	// animation: AnimationName 32s ease infinite;
 	background: white;
 	width: 100%;
-	height: 140vh;
+	// height: 140vh;
 }
 
 .foto-layer {
 	position: absolute;
-	width: 70%;
+	width: 75%;
 	mix-blend-mode: darken;
 	backdrop-filter: blur(30px);
 	top: 0;
@@ -118,7 +118,7 @@ svg:not(:root) {
 
 @media (max-width: 650px) {
 	.thefondo{
-		height: 120vh;
+		// height: 120vh;
 	}
 	.foto-layer {
 	object-fit: cover !important;
@@ -165,3 +165,4 @@ svg:not(:root) {
 	height: 30vh;
 	background-color: #150144;
 }
+

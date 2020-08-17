@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from 'react'
 import { BsCodeSlash } from "react-icons/bs"
 import { FaEye } from "react-icons/fa"
 import { Context } from "../Context"
+import { Button } from '@material-ui/core'
 
 
 export default function ContentMain({ info }) {
@@ -96,11 +97,11 @@ export default function ContentMain({ info }) {
 
                 <div className="btn-group">
                     <a href={info.item.urls.web} target="_blank" rel="noopener noreferrer">
-                        <button className="first" target="_blank" rel="noopener noreferrer">Visit</button>
+                        <Button className="first" target="_blank" rel="noopener noreferrer">Visit</Button>
                     </a>
                     <a href={info.item.urls.code} target="_blank" rel="noopener noreferrer">
-                        <button
-                            className="last">Source Code</button>
+                        <Button
+                            className="last">Source Code</Button>
                     </a>
                 </div>
 

@@ -9,13 +9,13 @@
 
 header {
   height: 15vh;
-  position: relative;
+  position: absolute;
   z-index: 10;
   display: flex;
   width: 100%;
   margin: 0;
   align-items: center;
-  top: 0;
+  top: 5vh;
   overflow-x: hidden;
 }
 
@@ -45,11 +45,10 @@ header .nameN {
 }
 
 header #burger {
-  position: absolute;
-  right: 9%;
-  top: 50%;
-  width: 32px;
+  font-size: 53px;
   cursor: pointer;
+  transform: translateY(5px);
+  color: white;
 }
 
 @keyframes fadeNavClose {
@@ -72,6 +71,11 @@ header .listaNav li {
 
 header nav {
   flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .exit-btn {
@@ -140,7 +144,6 @@ header nav {
   header {
     justify-content: space-around;
     padding-right: 2em;
-    padding-top: 3vh;
   }
   header #burger {
     display: none;
@@ -158,6 +161,7 @@ header nav {
     align-items: center;
     top: 5px;
     left: -8rem;
+    width: 100%;
   }
   header .listaNav li {
     display: flex;
@@ -198,9 +202,6 @@ header nav {
 }
 
 @media (max-width: 950px) {
-  header svg {
-    margin-left: 4rem;
-  }
   header .listaNav {
     left: -3rem;
   }
@@ -272,6 +273,10 @@ header.navClosed {
   transform: translateY(-200px);
 }
 
+#flex-itemm {
+  margin-left: auto;
+}
+
 .hero {
   display: flex;
   position: relative;
@@ -280,9 +285,8 @@ header.navClosed {
   opacity: 1;
   padding: 2em;
   padding-left: 12em;
-  margin-bottom: 15em;
   min-height: 100vh;
-  padding-top: 6em;
+  margin-top: 25vh;
 }
 
 .hero p {
@@ -352,23 +356,16 @@ header.navClosed {
 }
 
 .hero .btn-principal {
-  padding: 0.6em 1.5em;
-  text-decoration: none;
-  font-size: 1.15em;
-  box-sizing: border-box;
-  font-weight: bold;
-  color: white;
-  outline: 0;
-  opacity: 1;
   transform: translateY(50px);
   background-color: #1d1c34;
-  transition: color 0.5s ease, background 0.5s ease;
+  border: 1px solid transparent;
+  color: white;
   margin-left: 3px;
-  border: 3px solid #1d1c34;
   cursor: pointer;
 }
 
 .hero .btn-principal:hover {
+  border: 1px solid #1d1c34;
   color: #1d1c34;
   background-color: white;
 }
@@ -393,6 +390,7 @@ header.navClosed {
     margin-left: 0 !important;
     padding: 0.5em;
     font-size: 0.7em;
+    margin-top: 12vh;
   }
   .hero .wrap-titleH {
     overflow: hidden;
@@ -449,6 +447,7 @@ header.navClosed {
 @media (max-width: 800px) {
   .hero {
     padding-left: 2rem;
+    margin-top: 20vh;
   }
   .hero .btn-principal {
     margin-top: -2rem;
@@ -460,6 +459,7 @@ header.navClosed {
     margin-left: 0em;
     font-size: 0.95em;
     padding-left: 1rem;
+    margin-top: 15vh;
   }
   .hero .profile-photo {
     width: 100px;
@@ -475,25 +475,30 @@ header.navClosed {
 /* Note: backdrop-filter has minimal browser support */
 .container-services {
   box-sizing: border-box;
-  background-color: #1D1C34;
   margin-bottom: 3rem;
-  padding-top: 4em;
-  padding-bottom: 4em;
 }
 
 .container-services .cont-services {
   padding: calc(1rem + 1%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-services .cont-services .cartaSkill {
   margin: 2em auto;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), transform 0.7s cubic-bezier(0.21, 0.67, 0.13, 0.89), box-shadow 0.5s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  width: 300px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-align: center;
 }
 
 .container-services .cont-services .cartaSkill:hover {
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09), 0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09), 0 32px 16px rgba(0, 0, 0, 0.09);
+  border: 2px solid #1d1c34;
+  border-radius: 8px;
 }
 
 .container-services .cont-services .cartaSkill.visibleC {
@@ -507,7 +512,7 @@ header.navClosed {
 }
 
 .container-services .cont-services .cartaSkill h3 {
-  color: white;
+  color: #1d1c34;
   font-size: 1.5rem;
   margin: 1em 0;
 }
@@ -516,7 +521,7 @@ header.navClosed {
   opacity: 0.8;
   margin-bottom: 0;
   line-height: 1.5em;
-  color: white;
+  color: #1d1c34;
 }
 
 .hola {
@@ -526,19 +531,32 @@ header.navClosed {
 @media (min-width: 1000px) {
   .container-services .cont-services {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     padding: 2em;
   }
   .container-services .cont-services .cartaSkill {
-    text-align: left;
     height: auto;
     padding: 1.7em;
     top: 0px;
     margin: 0px;
   }
+  .container-services .cont-services .cartaSkill:first-child {
+    margin: auto 30%;
+  }
+  .container-services .cont-services .cartaSkill.item2 {
+    margin-right: 2rem;
+  }
+  .container-services .cont-services .cartaSkill.item3 {
+    margin-left: 2rem;
+  }
   .container-services .cont-services .cartaSkill .iconCard {
     font-size: 2em;
+  }
+}
+
+@media (max-width: 500px) {
+  .cartaSkill {
+    width: 100%;
   }
 }
 
@@ -605,6 +623,10 @@ header.navClosed {
   width: 100%;
   justify-content: center;
   order: 3;
+}
+
+.content .text__block .btn-group a {
+  text-decoration: none;
 }
 
 .content .text__block .btn-group button {
@@ -693,6 +715,7 @@ header.navClosed {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .image .inner-btn-section a:first-of-type {
@@ -719,6 +742,8 @@ header.navClosed {
 
 .image .inner-btn-section a .icon {
   font-size: 1.5rem;
+  text-decoration: none;
+  color: #111111;
 }
 
 .image .layer {
@@ -745,7 +770,7 @@ header.navClosed {
 @media (min-width: 800px) {
   .content {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     max-width: none;
   }
   .content.reversed {
@@ -1085,7 +1110,7 @@ header.navClosed {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 5em;
+  padding: 5.5em;
   padding-top: 0;
 }
 
@@ -1484,12 +1509,11 @@ svg:not(:root) {
   position: relative;
   background: white;
   width: 100%;
-  height: 140vh;
 }
 
 .foto-layer {
   position: absolute;
-  width: 70%;
+  width: 75%;
   mix-blend-mode: darken;
   backdrop-filter: blur(30px);
   top: 0;
@@ -1506,9 +1530,6 @@ svg:not(:root) {
 }
 
 @media (max-width: 650px) {
-  .thefondo {
-    height: 120vh;
-  }
   .foto-layer {
     object-fit: cover !important;
     height: 100%;

@@ -9,6 +9,8 @@ function ContextProv(props) {
     const contacto = useRef(0)
     const navigation = useRef(0)
     
+    const lenguage = useState("")
+    
     const [hasbeenLoaded, setHasbeenLoaded] = useState(false)
     const [viewWidth, setViewWidth] = useState(window.innerWidth)
     //avoid Nav's multiple rerenders on scrollpos change when button view more //work is toggled
