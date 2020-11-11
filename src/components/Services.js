@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useContext } from 'react'
 import { Context } from "./Context"
-import SpeedIcon from '@material-ui/icons/Speed';
-import DevicesOtherIcon from '@material-ui/icons/DevicesOther'
-import AccessibleIcon from '@material-ui/icons/Accessible';
+
 
 export default function Services() {
 
@@ -15,7 +13,7 @@ export default function Services() {
 
 
     useEffect(() => {
-        let kaka = setTimeout(() => {
+        let intersector = setTimeout(() => {
             const observu = new IntersectionObserver(items => {
                 let counter = 0
                 items.forEach(item => {
@@ -50,9 +48,9 @@ export default function Services() {
             })
         })
         return () => {
-            clearTimeout(kaka)
+            clearTimeout(intersector)
         }
-    }, [])
+    }, [arrCarta])
 
    
 

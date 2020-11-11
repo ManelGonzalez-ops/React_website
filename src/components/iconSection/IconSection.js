@@ -35,7 +35,7 @@ export default function IconSection({movileDisplay, innerWidth}) {
       })
     }
 
-  }, [icn1, icn2, icn3, innerWidth])
+  }, [icn1, icn2, icn3, innerWidth, observer, icnArr])
 
   const setDisplay = (props) => (`
       display: ${props.vista};

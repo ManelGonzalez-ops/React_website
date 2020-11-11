@@ -69,7 +69,7 @@ export default function Form() {
 
                             <h1 className="header-form">Contact Me!</h1>
 
-                            <form name="theFoorm" method="post" dataNetlify={true} className="form-box" >
+                            <form name="theFoorm" method="post" datanetlify="true" className="form-box" >
                                 <input type="hidden" name="form-name" value="form1" />
 
                                 <div className="wrap-input">

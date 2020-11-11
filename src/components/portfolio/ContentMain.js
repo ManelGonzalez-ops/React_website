@@ -24,19 +24,12 @@ export default function ContentMain({ info }) {
 
         items.forEach(item => {
             count.current = count.current - 0.3
-            console.log(item)
             if (item.isIntersecting) {
                 item.target.classList.add("visible")
-                console.log(item.target, "ISINTERSECTIIIIIIIIIIINGGG")
             }
         })
 
     }, { threshold: info.threshold })
-
-    // useEffect(()=>{
-
-    //     observer.observe()
-    // },[])
 
 
     useEffect(() => {
@@ -46,7 +39,7 @@ export default function ContentMain({ info }) {
             })
         }
 
-    }, [title, text, tech, imagen, viewWidth])
+    }, [title, text, tech, imagen, viewWidth, arrDom, observer])
 
 
     return (

@@ -6,28 +6,31 @@ function HeaderMoney(props) {
     const [gastos, setGastos] = useState(0)
     const [income, setIncome] = useState(0)
 
+   
+
+    
+
     useEffect(() => {
-        
+        //we define it here to avoid stupid rerenders
+        const checkStorage =()=>{
+            const total = props.datos.map(item=> item.amount)
+            
+            const totalAmountC = total.reduce((total, amount)=> total += parseInt(amount), 0)
+            const incomeC = total.reduce((total, amount)=>{
+                const amounta = parseInt(amount)
+                if(amounta>0){
+                    total += amounta
+                }
+                return total
+            }, 0)
+            setIncome(incomeC)
+            setTotalAmount(totalAmountC)
+            setGastos(totalAmount - income)    
+            }
         if(props.datos){
             checkStorage()
         }
-    }, [props.datos])
-
-    const checkStorage =()=>{
-    const total = props.datos.map(item=> item.amount)
-    
-    const totalAmountC = total.reduce((total, amount)=> total += parseInt(amount), 0)
-    const incomeC = total.reduce((total, amount)=>{
-        const amounta = parseInt(amount)
-        if(amounta>0){
-            total += amounta
-        }
-        return total
-    }, 0)
-    setIncome(incomeC)
-    setTotalAmount(totalAmountC)
-    setGastos(totalAmount - income)    
-    }
+    }, [props.datos, income, totalAmount])
     
     
     return (

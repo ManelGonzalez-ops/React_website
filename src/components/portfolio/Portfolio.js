@@ -1,5 +1,4 @@
-import React, { Fragment, useLayoutEffect, useRef, useContext, useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import React, { Fragment, useLayoutEffect, useRef, useContext, useState} from "react";
 // import Project from "./project";
 import Project from "./projectVgsap";
 import { Context } from "../Context";

@@ -170,15 +170,6 @@ export default class Nav extends React.Component {
 }
 
 
-const Hamburguer = () => (
-    <svg width="37" height="45" id="burger" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 3H37" stroke="red" strokeWidth="5" />
-        <path d="M0 29H37" stroke="white" strokeWidth="5" />
-        <path d="M0 16H37" stroke="white" strokeWidth="5" />
-    </svg>
-
-
-)
 
 const YoSvg = () => <svg width="70" id="yosvg" viewBox="0 0 204 165" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M151.486 149.729L113.836 149.4L113.891 143.072L144.722 143.341L144.858 127.662L116.348 127.413L116.4 121.437L144.911 121.686L145.063 104.179L113.705 103.905L113.759 97.7531L151.937 98.0862L151.486 149.729Z" fill="#3503AB" />

@@ -39,7 +39,7 @@ const Pomodoro = () => {
     setIsPlayed(false)
     setInitialTime(() => work * 60)
     setSumatorioRango(0)
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [work, longBreak, shortBreak, range])
 
 
@@ -47,6 +47,7 @@ const Pomodoro = () => {
     setHasbeenLoaded(true)
     
     setTime(`${work}:00`)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
@@ -156,7 +157,7 @@ const Pomodoro = () => {
 
   useEffect(() => {
     timer(tiempo)
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlayed])
 
 
@@ -176,7 +177,7 @@ const Pomodoro = () => {
     return ()=>{
       clearTimeout(rangoIntervalo)
     }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlayed])
 
 
@@ -217,7 +218,7 @@ const Pomodoro = () => {
     return()=>{
       clearTimeout(ringTimeout)
     }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [segundos])
 
 

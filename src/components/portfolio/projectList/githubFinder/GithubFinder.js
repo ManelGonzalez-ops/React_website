@@ -16,9 +16,13 @@ export default function GithubFinder() {
     gitFSection;
 
     useEffect(()=>{
+        // eslint-disable-next-line react-hooks/exhaustive-deps
          contenedor = document.querySelector("#git-titulo")
+         // eslint-disable-next-line react-hooks/exhaustive-deps
      cuerpo = document.querySelector(".search-container")
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     perfil = document.getElementById("profile-git")
+    // eslint-disable-next-line react-hooks/exhaustive-deps
      gitFSection = document.getElementById("git-result")
         const searchUser = document.getElementById('git-search')
         searchUser.addEventListener('keyup', init_App); 
@@ -26,6 +30,7 @@ export default function GithubFinder() {
         return(()=>{
             searchUser.removeEventListener('keyup', init_App)
         })
+         
     }, [])
 
     class Github {
@@ -117,8 +122,8 @@ export default function GithubFinder() {
     
 
     
-const github = new Github;
-const ui = new Ui;
+const github = new Github();
+const ui = new Ui();
  
 
 

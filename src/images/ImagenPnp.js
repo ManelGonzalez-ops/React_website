@@ -9,11 +9,11 @@ export default function ImagenPnp({hq, lq}) {
         if(url === lq){
             setUrl(process.env.PUBLIC_URL + "images/IMG-20190806-WA0018.jpg")
         }
-    }, [])
+    }, [lq,hq,url])
     
     return (
     
-        <img src={url} className="foto-layer" alt="mama"/>
+        <img src={url} className="foto-layer" alt="manel gonzalez"/>
      
     )
 }

@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect, useRef, useContext } from 'react'
 import "./weatherApp.css"
 import InfoHoverable from '../../../../utils/infoHoverable/infoHoverable'
 import { Context } from '../../../Context'
-import Porfolio from  "../../Portfolio"
+
 
 export default function WeatherApp() {
 
@@ -95,7 +95,7 @@ export default function WeatherApp() {
         // obtener data del localstorage 
         const ciudadSto = localStorage.getItem("ciudad")
         const paisSto = localStorage.getItem("pais")
-        if (ciudadSto != undefined && paisSto != undefined) {
+        if (ciudadSto !== undefined && paisSto !== undefined) {
             displayManagment(JSON.parse(ciudadSto), JSON.parse(paisSto))
         }
         else {
@@ -151,9 +151,14 @@ export default function WeatherApp() {
     }, [modalOpen])
 
     useEffect(() => {
+        const title = document.createElement("h1")
+        title.id = "city-weath"
+        document.querySelector(".header-weath").prepend(title)
         setHasbeenLoaded(true)
         gestionStorage()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         ciudad = document.getElementById("cityWeath")
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         estado = document.getElementById("stateWeath")
        
 
@@ -179,7 +184,7 @@ export default function WeatherApp() {
             <section className="main-weath">
                 <div className="container-weath">
                     <div className="header-weath" >
-                        <h1 id="city-weath"></h1>
+                        {/* <h1 id="city-weath">.</h1> */}
                         <p className="country" id="country-weath"></p>
                         <p className="tempe" id="tiempo-weath"></p>
                     </div>

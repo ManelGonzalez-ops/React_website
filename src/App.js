@@ -56,22 +56,22 @@ function App() {
     }
   }
 
-  const updateWidth = () => {
-    console.log("mama")
-    context.setViewWidth(window.innerWidth)
-  }
+
 
 
 
   useLayoutEffect(() => {
-
+    const updateWidth = () => {
+      console.log("mama")
+      context.setViewWidth(window.innerWidth)
+    }
 
     window.addEventListener("resize", updateWidth)
 
     return () => document.removeEventListener("resize", updateWidth)
 
 
-  }, [])
+  }, [context])
 
 
 

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react'
 
 export default function Animation() {
     const refContenedor = useRef(null)
-    const refBoton = useRef(null)
     const [isOpen, setIsOpen] = useState(true)
 
     function cerrar() {
