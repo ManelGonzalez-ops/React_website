@@ -11,7 +11,6 @@ export default function Services() {
     const carta3 = useRef(null)
     const arrCarta = [carta1, carta2, carta3]
 
-
     useEffect(() => {
         let intersector = setTimeout(() => {
             const observu = new IntersectionObserver(items => {
