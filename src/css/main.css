@@ -8,7 +8,7 @@
 }
 
 header {
-  height: 15vh;
+  height: 12vh;
   position: absolute;
   z-index: 10;
   display: flex;
@@ -365,9 +365,7 @@ header.navClosed {
 }
 
 .hero .btn-principal:hover {
-  border: 1px solid #1d1c34;
-  color: #1d1c34;
-  background-color: white;
+  background: black;
 }
 
 .icono1,
@@ -476,6 +474,7 @@ header.navClosed {
 .container-services {
   box-sizing: border-box;
   margin-bottom: 3rem;
+  perspective: 1000px;
 }
 
 .container-services .cont-services {
@@ -486,6 +485,7 @@ header.navClosed {
 }
 
 .container-services .cont-services .cartaSkill {
+  transform-style: preserve-3d;
   margin: 2em auto;
   opacity: 0;
   transform: translateY(50px);
@@ -581,7 +581,7 @@ header.navClosed {
 .content .text__block .reveal {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.7s ease, transform 0.5s ease;
   line-height: 1.4rem;
 }
 
@@ -1387,7 +1387,7 @@ header.navClosed {
 }
 
 .wrap-input {
-  margin: 1.9rem auto;
+  height: 83px;
 }
 
 .wrap-input:first-of-type {

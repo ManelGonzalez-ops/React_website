@@ -1,9 +1,5 @@
-import React, { useEffect, useRef, useContext} from 'react'
-import { IoIosSpeedometer } from "react-icons/io"
-import { MdAccessibility } from "react-icons/md"
-import { AiFillMobile } from "react-icons/ai"
-import { useTranslation } from "react-i18next"
-import {Context} from "./Context"
+import React, { useEffect, useRef, useContext } from 'react'
+import { Context } from "./Context"
 import SpeedIcon from '@material-ui/icons/Speed';
 import DevicesOtherIcon from '@material-ui/icons/DevicesOther'
 import AccessibleIcon from '@material-ui/icons/Accessible';
@@ -11,8 +7,6 @@ import AccessibleIcon from '@material-ui/icons/Accessible';
 export default function Services() {
 
     const contexto = useContext(Context)
-
-    const { t, i18n } = useTranslation()
 
     const carta1 = useRef(null)
     const carta2 = useRef(null)
@@ -39,39 +33,50 @@ export default function Services() {
                 observu.observe(item.current)
             })
         }, 2)
+        arrCarta.forEach(item=>{
+            item.current.addEventListener("mouseenter", ()=>{
+                console.log("entered")
+                item.current.addEventListener("mousemove", (e)=>{
+                    console.log("moving")
+                    item.current.style.transition = "none"
+                    let xAxis = (window.innerWidth/2 - e.clientX)/ 22
+                    let yAxis = (window.innerHeight/2 - e.clientY)/ 22
+                    item.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+                })
+                item.current.addEventListener("mouseleave", ()=>{
+                    item.current.style.transition = "transform 0.5s ease"
+                    item.current.style.transform = "rotateY(0deg) rotateX(0deg)"
+                })
+            })
+        })
         return () => {
             clearTimeout(kaka)
         }
     }, [])
 
-    const handleLenguage =(lan)=>{
-        i18n.changeLanguage(lan)
-    }
+   
 
     return (
         <div ref={contexto && contexto.sobreMi}>
-            <div className="button-wrapper">
-                <button onClick={() => { handleLenguage("en") }}>Ingles</button>
-                <button onClick={() => { handleLenguage("chi") }}>Chino</button>
-                <button onClick={() => { handleLenguage("ko") }}>Koreano</button>
-            </div>
+            
             <div className="container-services">
                 <div className="cont-services">
                     <div className="cartaSkill" ref={carta1}>
-                        <SpeedIcon className="iconCard" />
-                        <h3>sdhgsdshjs</h3>
-                        <p>{t("Thanks.1")}</p>
+                        {/* <SpeedIcon className="iconCard" /> */}
+                        <h3>Performance <br></br> & complexity</h3>
+                        <p>I am specializated building Applications with React for me the fastest way it to build a highly scalable applications with complex states and complex UI structures.
+                            </p>
                     </div>
                     <div className="cartaSkill item2" ref={carta2}>
-                        <DevicesOtherIcon className="iconCard " />
-                        <h3>Responsive Design First</h3>
-                        <p>{t("Koko.1")}</p>
+                        {/* <DevicesOtherIcon className="iconCard " /> */}
+                        <h3>Accesibility</h3>
+                        <p>I develop following the Responsive Design First, ensuring a great portability across devices. At the same time I adapt designer's prototypes into browser's compatible builds.</p>
                     </div>
                     <div className="cartaSkill item3" ref={carta3}>
-                        <AccessibleIcon className="iconCard" />
-                        <h3>Accesibilidad</h3>
+                        {/* <AccessibleIcon className="iconCard" /> */}
+                        <h3>Adaptation</h3>
                         <p>
-                            {t("Kaka.1")}</p>
+                            I use a set of modern technologies to build fast, accessible and highly featured web applications. For that I try to keep up to date with last tecnologies to implement them when they make a real difference.</p>
                     </div>
                 </div>
             </div>

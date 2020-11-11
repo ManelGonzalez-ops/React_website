@@ -35,7 +35,7 @@ function Hero({ hasLoaded, contextu }) {
         </h1>
         </div>
 
-        <Button variant="contained" style={{background: "#150144", color: "white"}} size="large" ref={btnPnp} onClick={() => { contextu("portfolio") }}>My work</Button>
+        <Button className="btn-principal" variant="contained" size="large" ref={btnPnp} onClick={() => { contextu("portfolio") }}>My work</Button>
 
       </div>
 

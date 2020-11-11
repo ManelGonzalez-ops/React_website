@@ -89,9 +89,7 @@
         cursor: pointer;
     }
     .btn-principal:hover {
-        border: 1px solid #1d1c34;
-        color: #1d1c34;
-        background-color: white;
+        background: darken($color: #1d1c34, $amount: 25%);
         // color: #1d1c34;
         // background-color: white;
     }

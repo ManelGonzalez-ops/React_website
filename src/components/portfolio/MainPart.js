@@ -31,7 +31,7 @@ const data = [
         img: NodeEcommerce
         ,
         urls: {
-            web: "https://distracted-borg-05149b.netlify.app",
+            web: "https://goofy-jepsen-4550c6.netlify.app",
             code: "https://github.com/ManelGonzalez-ops/mern-ecommerce",
         }
         

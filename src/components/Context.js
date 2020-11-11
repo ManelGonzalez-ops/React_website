@@ -9,7 +9,7 @@ function ContextProv(props) {
     const contacto = useRef(0)
     const navigation = useRef(0)
     
-    const lenguage = useState("")
+
     
     const [hasbeenLoaded, setHasbeenLoaded] = useState(false)
     const [viewWidth, setViewWidth] = useState(window.innerWidth)

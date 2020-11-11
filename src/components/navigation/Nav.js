@@ -13,7 +13,7 @@ export default class Nav extends React.Component {
             scrollPos: 0,
             anularNav: false
         }
-        this.navRef = null
+        this.navRef = React.createRef()
         this.handleScroll = this.handleScroll.bind(this)
 
     }
@@ -46,9 +46,10 @@ export default class Nav extends React.Component {
 
                 if (this.navRef.style.position !== "fixed") {
                     this.navRef.style.top = "0vh"
+                    //this.navRef.style.transform = "translateY(0vh)"
                     this.navRef.style.position = "fixed"
                     this.navRef.style.visibility = "hidden"
-                    this.navRef.style.background = "#3503AB"
+                    this.navRef.style.background = "rgba(53, 3, 171, 0.9)"
 
                     document.querySelector("#yosvg").childNodes.forEach(path => {
                         path.style.fill = "#fff"
@@ -75,6 +76,7 @@ export default class Nav extends React.Component {
                 if (this.navRef.style.position !== "absolute") {
                     this.navRef.style.position = "absolute"
                     this.navRef.style.top = "5vh"
+                    //this.navRef.style.transform = "translateY(5vh)"
                     this.navRef.style.background = "none"
                     document.querySelector("#yosvg").childNodes.forEach(path => {
                         path.style.fill = "#3503AB"
@@ -149,7 +151,13 @@ export default class Nav extends React.Component {
                             <li onClick={() => this.switchState("contacto")}><span className="hiperoverlay">Contacto</span></li>
                         </ul>
 
-                        <span onClick={this.changeNav} id="flex-itemm"><MenuSharpIcon id="burger" /></span>
+                        <span onClick={this.changeNav} id="flex-itemm">
+                            <MenuSharpIcon
+                             id="burger"
+                             style={{marginRight: "1rem", fontSize: "40px"}}
+
+                             />
+                            </span>
 
                     </nav>
 

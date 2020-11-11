@@ -20,6 +20,7 @@ export default function Form() {
             variant="outlined"
             className="text-input"
             autoComplete="off"
+           
         />)
     }
 
@@ -41,8 +42,6 @@ export default function Form() {
             .string()
             .required()
             .max(10000),
-
-
     });
 
 
@@ -109,6 +108,7 @@ export default function Form() {
                                  color="primary"
                                  size="large"
                                  variant="contained"
+                                 style={{marginTop: "4rem"}}
                                  disabled={Object.keys(errors).length > 0}
                                  >Submit</Button>
                             </form>

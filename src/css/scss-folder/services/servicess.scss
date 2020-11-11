@@ -2,6 +2,7 @@
     box-sizing: border-box;
     // background-color: #1d1c34;
     margin-bottom: 3rem;
+    perspective: 1000px;
    
     .cont-services {
         padding: calc(1rem + 1%);
@@ -11,6 +12,7 @@
         // scroll-snap-align: center;
 
         .cartaSkill {
+            transform-style: preserve-3d;
             margin: 2em auto;
             opacity: 0;
             transform: translateY(50px);

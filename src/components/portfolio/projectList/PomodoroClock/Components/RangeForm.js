@@ -79,28 +79,28 @@ function RangeForm() {
                     
                     <span className="labelTime">{Math.floor(parseInt((work)))}:00</span>
                     <span className="labelTittle">Work</span>
-                    <input className="inputRange" type="range" step="0.01" min="1" max="60" value="3" name="work" value={work} onChange={cambiarDrag}></input>
+                    <input className="inputRange" type="range" step="0.01" min="1" max="60"  name="work" value={work} onChange={cambiarDrag}></input>
 
                 </Kaka>
                 <Kaka color="rgba(203, 19, 45, 1)" colorLab="rgba(203, 19, 45, 0.7)">
 
                     <span className="labelTime">{Math.floor(parseInt((longBreak)))}:00</span>
                     <span className="labelTittle">Long Break</span>
-                    <input className="inputRange" type="range" step="0.01" min="1" max="60" value="3" name="longBreak" value={longBreak} onChange={cambiarDrag}></input>
+                    <input className="inputRange" type="range" step="0.01" min="1" max="60" name="longBreak" value={longBreak} onChange={cambiarDrag}></input>
 
                 </Kaka>
                 <Kaka color="rgba(58, 61, 232, 1)" colorLab="rgba(58, 61, 232, 0.7)">
 
                     <span className="labelTime">{Math.floor(parseInt((shortBreak)))}:00</span>
                     <span className="labelTittle">Short Break</span>
-                    <input className="inputRange" type="range" step="0.01" min="1" max="60" value="3" name="shortBreak" value={shortBreak} onChange={cambiarDrag}></input>
+                    <input className="inputRange" type="range" step="0.01" min="1" max="60" name="shortBreak" value={shortBreak} onChange={cambiarDrag}></input>
 
                 </Kaka>
                 <Kaka color="var(--color-contrast)" colorLab="var(--color-contrast)">
 
                     <span className="labelTime">{Math.floor(parseInt((range)))}</span>
                     <span className="labelTittle">Range</span>
-                    <input className="inputRange" type="range" step="0.01" min="1" max="10" value="3" name="range" value={range} onChange={cambiarDrag}></input>
+                    <input className="inputRange" type="range" step="0.01" min="1" max="10" name="range" value={range} onChange={cambiarDrag}></input>
 
                 </Kaka>
             </div>
