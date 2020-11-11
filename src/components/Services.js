@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useContext } from 'react'
 import { Context } from "./Context"
-
+//imp
 
 export default function Services() {
 
@@ -52,7 +52,6 @@ export default function Services() {
         }
     }, [arrCarta])
 
-   
 
     return (
         <div ref={contexto && contexto.sobreMi}>
